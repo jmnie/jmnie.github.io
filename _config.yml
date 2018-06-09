@@ -285,3 +285,8 @@ about:
 #     name: ng-simditor
 #     url: https://github.com/forsigner/ng-simditor
 #     intro: Angular directive for simditor
+
+deploy:
+  type:git
+  repository: https://github.com/jmnie/jmnie.github.io
+  branch: master
