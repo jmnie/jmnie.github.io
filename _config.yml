@@ -1,3 +1,4 @@
+theme: fexo
 # Blog info
 blog_name: Jiaming's Nutshell
 slogan: Do not quench your imagination and inspiration, do not become the slave of your model.
@@ -124,8 +125,8 @@ init_page_content: HOME_NAV  # HOME_NAV | POST
 # 第三方服务
 # =========================================================
 # Stats
-google_analytics:
-baidu_analytics: 57e94d016e201fba3603a8a2b0263af0
+#google_analytics:
+#baidu_analytics: 57e94d016e201fba3603a8a2b0263af0
 
 # Comment service
 disqus_shortname: forsigner
@@ -152,7 +153,7 @@ disqus_shortname: forsigner
 #     link: # An optional link for your page, used in issue's body. Default location.href.
 #     desc: # An optional description for your page, used in issue's body. Default ''.
 #     labels: # An optional array of labels your want to add when creating the issue. Default [].
-theme: fexo # An optional Gitment theme object. Default gitment.defaultTheme.
+#     theme: fexo # An optional Gitment theme object. Default gitment.defaultTheme.
 #     perPage: # An optional number to which comments will be paginated. Default 20.
 #     maxCommentHeight: # An optional number to limit comments' max height, over which comments will be folded. Default 250.
 
