@@ -1,4 +1,4 @@
-theme: fexo
+# theme: fexo
 # Blog info
 blog_name: Jiaming's Nutshell
 slogan: Do not quench your imagination and inspiration, do not become the slave of your model.
@@ -287,6 +287,6 @@ about:
 #     intro: Angular directive for simditor
 
 deploy:
-  type:git
+  type: git
   repository: https://github.com/jmnie/jmnie.github.io
   branch: master
