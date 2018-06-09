@@ -288,5 +288,5 @@ about:
 
 deploy:
   type: git
-  repository: https://github.com/jmnie/jmnie.github.io
+  repository: https://github.com/jmnie/jmnie.github.io.git
   branch: master
