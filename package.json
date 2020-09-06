@@ -39,7 +39,7 @@
     "gh-pages": "^3.1.0",
     "prettier": "2.1.0"
   },
-  "homepage": "https://github.com/jmnie/jmnie.github.io",
+  "homepage": "https://jmnie.github.io",
   "keywords": [
     "gatsby"
   ],
@@ -47,7 +47,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/jmnie/jmnie.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",
