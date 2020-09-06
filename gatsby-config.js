@@ -97,8 +97,6 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 
-  pathPrefix: "/jmnie.github.io",
-  
 }
 
 

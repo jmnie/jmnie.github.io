@@ -1,1 +1,0 @@
-module.exports = require("/Users/jmnie/code/jmnie.github.io/src/utils/typography")
