@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jiaming's Nutshell]]></title><description><![CDATA[Personal blog based on gatsby.js.]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 06 Sep 2020 03:44:34 GMT</lastBuildDate><item><title><![CDATA[Learning Data Structure & Algorithm]]></title><description><![CDATA[Preface 数据结构和算法属于基础的东西，有句话就是program = data structure + algorithm. 数据结构构造不同的存储数据方式（往往根据现实需求），通过特定算法组成程序的逻辑，解决真实问题。实际中并不会去手写一个stack/queue…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/study_data_structure/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/study_data_structure/</guid><pubDate>Thu, 03 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Preface&lt;/h2&gt;
+&lt;p&gt;数据结构和算法属于基础的东西，有句话就是program = data structure + algorithm. 数据结构构造不同的存储数据方式（往往根据现实需求），通过特定算法组成程序的逻辑，解决真实问题。实际中并不会去手写一个stack/queue/linkedlist来去解决问题，这些在不同语言中已经实现了，关键是用他们去解决一些问题（比如地图染色，找最大最小，etc）。&lt;/p&gt;
+&lt;h2&gt;书籍 Books&lt;/h2&gt;
+&lt;h3&gt;《算法导论》Introduction to Algorithms&lt;/h3&gt;
+&lt;p&gt;这本书从recursion开始讲起，包括不同的数据结构（stack|queue|heap|hash table|binary search tree),排序算法（merge sort|binary search|quick sort), 还有一部分图算法。&lt;/p&gt;
+&lt;p&gt;优点是：内容设置很合理，从最简单的递归－&gt;深度优先，广度优先，最简单的选择排序－&gt;二分查找－&gt;合并排序，快速排序，然后再次基础上讲图算法。
+缺点是：每一章节会在数学论证上挖的比较深（比如各种算法的lower upper bound的证明，这种东西不太适合一般程序员，会让初学者顾此失彼。）&lt;/p&gt;
+&lt;p&gt;算法导论课后习题答案: &lt;a href=&quot;https://sites.math.rutgers.edu/~ajl213/CLRS/CLRS.html&quot;&gt;solution1&lt;/a&gt;, &lt;a href=&quot;https://walkccc.github.io/CLRS/&quot;&gt;solution2&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;《Algorithms》算法&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://algs4.cs.princeton.edu/home/&quot;&gt;地址&lt;/a&gt; 这本书是普林斯顿一个教授写的，完全不用买纸质书，因为全书都已经在上述的地址里了，而且包括所有内容的相关代码。并且这门课在coursera上是有视频的，并且免费。&lt;/p&gt;
+&lt;p&gt;优点：极其注重实践，和算法导论完全不是一个风格，用的语言是Java（Java各种数据结构的API设计的很规范，有些动态语言如python很灵活，比如list本身就可以当作queue和stack用，对一些不是很熟悉的学习者来说，比如我，555，在练习的时候就会产生迷惑，对学习基础的内容反而不是很有帮助）。&lt;/p&gt;
+&lt;p&gt;缺点：对初学者极其不友好。这本书最好的用户是有了一定基础的学习者。coursera上的网课第一次作业就是union find, 而且几个视频的内容是算法导论一章才能讲完的。&lt;/p&gt;
+&lt;h2&gt;网课&lt;/h2&gt;
+&lt;p&gt;a. 算法导论是没有网课的，算法这本书有网课，但是并不适合初学者。&lt;/p&gt;
+&lt;p&gt;b. 九章算法只看过一些，好像价格也比较合理，时间比较灵活，并且比较实用，适合面试的人使用。&lt;/p&gt;
+&lt;p&gt;c. 一个英文的课程：&lt;a href=&quot;https://www.educative.io/courses/grokking-the-coding-interview?aff=K7qB&quot;&gt;course&lt;/a&gt;. 这个我其实没上过，按月收费的，而且面向找工作的人，也不是很适合初学者。&lt;/p&gt;
+&lt;p&gt;d. 我之前旁听过来offer的直播课（每周固定时间），讲得不错，但是一是很贵，二是面向的人群是在美国找工作的人。&lt;/p&gt;
+&lt;h2&gt;leetcode/lintcode&lt;/h2&gt;
+&lt;p&gt;我只用过leetcode，lintcode没用过，不过应该也类似。leetcode现在有1000多题，题目质量有好有坏，怎么做leetcode，不同的人也有不同的做法：&lt;/p&gt;
+&lt;p&gt;a. 爆刷流，按照题号直接一题一题做；&lt;/p&gt;
+&lt;p&gt;b. 精刷流，对于一道题可能会钻研半天，尝试使用不同的解法（bfs｜dfs）而且不达成100%（运行时间少于100%的人）不罢休。&lt;/p&gt;
+&lt;p&gt;不同的方法没有好坏之分，只有适合不适合。之前认识的朋友，有做了300-400就去了大厂的，也有leetcode全刷了一遍去大厂的，也有极其聪明200多去谷歌的。当然，大部分人属于第一种，对于大部分题目有个基础的认识，对于不同的数据结构有清晰的用法和场景，其实就足够了。&lt;/p&gt;
+&lt;p&gt;leetcode有个板块，&lt;a href=&quot;https://leetcode.com/explore/learn/&quot;&gt;explore/learn&lt;/a&gt;, 按照最基础的array/linkedlist/binary tree/binary search tree/hash table 来区分的。加在一起200题左右。并且每个部分先会有讲解，然后由浅入深的练习。（但是每个板块的最后几题有可能会出现hard）刚开始做的时候实在做不出来不一定非要钻牛角尖。这部分可以结合算法导论的理论部分，学习理论并且在这个板块中进行练习，个人觉得效果还行= =。
+对于大部分面试来说 easy|medium （20% esay 80% medium） 绝对够用了，hard可以给学有余力或者大神去解决，而且个别hard题目解法比较刁钻。&lt;/p&gt;
+&lt;p&gt;在做完learn之后，可以参加leetcode的weekly contest，1小时30分钟 4道题目，有排名。刚开始学习的时候不建议参加= =因为很可能第一道题就不会做导致打击学习热情。&lt;/p&gt;
+&lt;h2&gt;为什么要刷题｜学习算法数据结构？&lt;/h2&gt;
+&lt;p&gt;a. 理论一点来说，算法和数据结构是学习cs的基础，坚实基础，永远都没有错。&lt;/p&gt;
+&lt;p&gt;b. 对于国外的公司（国内就是相当一部分外企+某些企业，如字节），刷题是成本最低的筛选方式。如果一个面试者题目都做得出来，那么要么很聪明，要么花了一部分时间，那么这样的人招进来，肯定符合要求。而且很多公司的项目组或者系统很复杂，进去一段时间内都在熟悉业务和整体架构，那么招个聪明或者辛勤努力的学习者，一定没错。&lt;/p&gt;
+&lt;p&gt;当然这种方式下存在两种人不适合这个筛选方式：（1）只会刷题工程能力很弱的 （2）工程能力很强但是不会刷题的。对于（1）给够一定时间学习就行了，只要脑子不笨或者愿意花时间，业务上的东西都会搞明白的，工程能力是可以慢慢培养的。对于（2），这种人有，但很少，比如2015年homebrew的作者去面试谷歌，因为不会翻转二叉树而挂掉面试（invert binary searh tree）。但是这样的人很少。没有哪一种方式是完美的～&lt;/p&gt;
+&lt;p&gt;c. 这个是玄学的说法，但是make sense: 刷题刷多了，经常动脑去思考，对于思考业务逻辑（还有工程能力）也是有一定帮助的～&lt;/p&gt;
+&lt;h2&gt;网盘？&lt;/h2&gt;
+&lt;p&gt;九章算法：&lt;a href=&quot;https://pan.baidu.com/s/1_LRWPfuWd-Jp5yt1Ria07g&quot;&gt;链接&lt;/a&gt;  提取码: ybsn&lt;/p&gt;
+&lt;p&gt;我上过的来offer的讲义（这个讲义对很多题目的方法都很不错）：
+&lt;a href=&quot;https://pan.baidu.com/s/1mqgQdtZ_PcGKiYmUZbSZsQ&quot;&gt;链接&lt;/a&gt;  提取码: h5zs&lt;/p&gt;</content:encoded></item><item><title><![CDATA[WPI CS 539 Project - Images Style Transfer Using CNN]]></title><description><![CDATA[This is the webpage of WPI CS 539 (Machine Learning) final project. Group Member: Jiaming Nie, Ruojun Li, Yu Li, Yang Tao, Guangda Li…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/ml_project/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/ml_project/</guid><pubDate>Sun, 09 Dec 2018 10:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is the webpage of WPI CS 539 (Machine Learning) final project.&lt;/p&gt;
+&lt;p&gt;Group Member:&lt;/p&gt;
+&lt;p&gt;Jiaming Nie, Ruojun Li, Yu Li, Yang Tao, Guangda Li&lt;/p&gt;
+&lt;h1&gt;Introduction To Style Transfer&lt;/h1&gt;
+&lt;p&gt;Style transfer is the technique of recomposing images in the style of other images. Three images will be taken, a content image, a style image and output image.&lt;/p&gt;
+&lt;p&gt;Deep convolutional neural network is a powerful tool to extract the feature which represents the styles. The style could be the structure of one painting, the way artists draw their paintings and the colors that the artists use. Representation of content images can also be extracted using the deep convolutional neural network.&lt;/p&gt;
+&lt;p&gt;A style transfer demo is illustrated on the following image:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d068b09179d2fac329ed722c8820855c/c58a3/uol_output.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 62.16216216216216%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAQBAgP/xAAWAQEBAQAAAAAAAAAAAAAAAAADAAH/2gAMAwEAAhADEAAAAVocEKpibf/EABoQAAMBAAMAAAAAAAAAAAAAAAABAhEDEjH/2gAIAQEAAQUC71iQ5YuKUYX7/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFhEAAwAAAAAAAAAAAAAAAAAAAAER/9oACAECAQE/AaiM/8QAGxAAAgEFAAAAAAAAAAAAAAAAAAEhEBExQZH/2gAIAQEABj8CLSyFxG6ZZ//EABwQAQABBAMAAAAAAAAAAAAAAAEAEUFRgSFxwf/aAAgBAQABPyE4AGphJqPbEKIjV3E1vmFPZP/aAAwDAQACAAMAAAAQUM//xAAXEQEBAQEAAAAAAAAAAAAAAAABABFh/9oACAEDAQE/ENSHl//EABgRAAIDAAAAAAAAAAAAAAAAAAABETFR/9oACAECAQE/EJKRgz//xAAaEAEBAQADAQAAAAAAAAAAAAABEQAhQWGB/9oACAEBAAE/EAcl5KEQfM08YysKVIAqn2d5YyorveQLHs0CFxn/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;uol output&quot;
+        title=&quot;uol output&quot;
+        src=&quot;/static/d068b09179d2fac329ed722c8820855c/1c72d/uol_output.jpg&quot;
+        srcset=&quot;/static/d068b09179d2fac329ed722c8820855c/a80bd/uol_output.jpg 148w,
+/static/d068b09179d2fac329ed722c8820855c/1c91a/uol_output.jpg 295w,
+/static/d068b09179d2fac329ed722c8820855c/1c72d/uol_output.jpg 590w,
+/static/d068b09179d2fac329ed722c8820855c/a8a14/uol_output.jpg 885w,
+/static/d068b09179d2fac329ed722c8820855c/fbd2c/uol_output.jpg 1180w,
+/static/d068b09179d2fac329ed722c8820855c/c58a3/uol_output.jpg 1500w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1&gt;Images Representation&lt;/h1&gt;
+&lt;h2&gt;Use Pre-trained CNN to generate activation maps&lt;/h2&gt;
+&lt;p&gt;Deep convolutional neural network can output the activation map, which are features representing the content or style of an image. In this project, a ImageNet pretrained vgg16 network will be used to output the feature at different layers.&lt;/p&gt;
+&lt;p&gt;VGG 16 is a deep CNN including 5 convolutional layers, 2 fully connetced layers and 1 softmax output layer. In this project, only the convolutional layers will be used as they will output the activation maps.&lt;/p&gt;
+&lt;p&gt;The architecture of VGG16 is on the following:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/db1c097ad63b388bcd303d0a65fee384/5a190/vgg16.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 23.64864864864865%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsSAAALEgHS3X78AAAA30lEQVQY002P3XKEIAyFff/Hq107a51ZWX9GwICKCSoizXrVL3fJOTlJVjwefdcdIVybJ2tSjCEFIEgpyd65xVuLbiYf43KE8zy3mxgjCzLUcgW9HQebo/c0L3RudrfDyOVE3YGeG9EZXDsApTUROedCCIiYESLAaIxp3/XzJ2+FkFJ+5Tl3ePd1Xemmqn6NteM4CiGa5s2a16vOpplZ5CBb1ZV9tW/7uvr8uyLC9A9O01p/pMsyTRPne+8zO33sPMZ1Fa9aKcUvFUXBuwGAPQYAke/DsizVzSAleZJK/QE9JhkdfL3I6QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;vgg16&quot;
+        title=&quot;vgg16&quot;
+        src=&quot;/static/db1c097ad63b388bcd303d0a65fee384/fcda8/vgg16.png&quot;
+        srcset=&quot;/static/db1c097ad63b388bcd303d0a65fee384/12f09/vgg16.png 148w,
+/static/db1c097ad63b388bcd303d0a65fee384/e4a3f/vgg16.png 295w,
+/static/db1c097ad63b388bcd303d0a65fee384/fcda8/vgg16.png 590w,
+/static/db1c097ad63b388bcd303d0a65fee384/5a190/vgg16.png 800w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;VGG16 takes 224 as the input size and all the convolutional layers are hidden layers.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3d3d1764d8e9bbff8810f2631bc8ff58/2e237/layer2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.64864864864865%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAACUElEQVQozxVQy2oTUQAdXIgLEdwJbqQV0S5asNpYqyLWPq2ZZJpmZu7NvfN+z9zJTNo0TaJpQtMnNmltFC0tigqigkJdCG500YWLiqhFP8Gdn6DT3TkHDudBabqV5nhJUURFYXmgGibL86IkeYRgbuJy76XbmrxW4T8/x+tTlnGrz5DjxGSnRwf729ooP8xjUXI8YrueJCtBblKQZNt2ZqYLw+N07Ga8bThZFkd3CN2sks1m1TB5vad9xYSxjnMUwiJNJ3gIeAATyXFBFBPJJMcBWdUkdiIVax9IJdixwWXAwqFY2WHS3Ig9RteKVn9fFxWYDuKgZpq6YQKELZ8AhAxd10lua4r5pZ764A5P5eyHjZVyNgwstZK3FmuF1nKlr6ebcgwbpDnN0BVVYyE0XIeDUFUVzSKbFXnX7nhjXa2Wg3opX6revVMuF/LFuRxbI+z5riuUgA96AhEBlIkAxiiRZHiQgRnUevCo9fRl4/XOWc08frqjd3AE0gP00EC9aN9bLaRZQPnZEIui7Xuu62BR8H0/opbjOo679fzFu0/fP375cXRm7Vjn9WvdF0eGbvCp8blZs9lYKJZKFAfgWDwOEAQZQDNJJAgJhonEg+fzxfX1jdX7TbSUNsOTCnPGFGVCdEOOXkvZxKfq8wue5+pGNFnho822wx841Sh5Mj/DQUnV5G9vj/z7c3hj8cKTpdlnj+ddnGnVCgJgqf2f+3tf90jgGZaGBZFkA4SxYVrZIMyFAcQAInb3/Ym/vw9t1ztfba/Nh3GajjfqFQGk/wMC6fL+c4uafQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;layer2&quot;
+        title=&quot;layer2&quot;
+        src=&quot;/static/3d3d1764d8e9bbff8810f2631bc8ff58/fcda8/layer2.png&quot;
+        srcset=&quot;/static/3d3d1764d8e9bbff8810f2631bc8ff58/12f09/layer2.png 148w,
+/static/3d3d1764d8e9bbff8810f2631bc8ff58/e4a3f/layer2.png 295w,
+/static/3d3d1764d8e9bbff8810f2631bc8ff58/fcda8/layer2.png 590w,
+/static/3d3d1764d8e9bbff8810f2631bc8ff58/2e237/layer2.png 790w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Layer 2 of the CNN. The left image represents what the CNN has learned and the right image has parts of actual images.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In layer 2 of the CNN the model is already picking up more interesting shapes than just diagonal lines. In the sixth square (counting horizontally) you can see that the model is picking up circular shapes. Also, the last square is looking at corners.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f9dcb43e3297f438b3c71729c2a96d5a/5a190/layer3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 37.16216216216216%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsSAAALEgHS3X78AAABfUlEQVQY0y1QTU/CQBDtr/GkiR68ExMTvwniFwJFU0r9QEq7O7vdLbQo1gJWajUxkuDNaGICwsHEi2d/iPg/3Ca+vLyZw5t5k5EwtYjFEAAQgiEuGAgCjBljtbq6sZZMTGnbme/Pr37/HojGdaVQXABnB5/vSgYmYsw0kYmwEWtMwzQxoTbn6cRs6UgJ/Choep1aRTtUlYPDleXExubabehJlmUxxk0Mwi0ygVCIG6CMuTZ/zsz1bCMvZ7dSq3C05zfdtt/Q9KZStj+GbxIhVFBEIYRjiQH/ydTqz0+jopJMp0qZfEvf6fq3w9FYLajH8syYFyS9alQNM3YjQEKQIIgtYiNmVlle9FDJ58dXarp7lvQv+P2Fjs5ySEs/XRPpfTQeDIZuo0GAUmJR8T/KxOWc27W64znUqeTaKBspq69EDlz6EnZu7lpydsmjqvQ7mUx+fh57vXYQBDcCXUHRhWEYRVGzbsjZ/Ut+oqrbgefC7vqDfnLulh371G+wP2/Uw61+8hKpAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;layer3&quot;
+        title=&quot;layer3&quot;
+        src=&quot;/static/f9dcb43e3297f438b3c71729c2a96d5a/fcda8/layer3.png&quot;
+        srcset=&quot;/static/f9dcb43e3297f438b3c71729c2a96d5a/12f09/layer3.png 148w,
+/static/f9dcb43e3297f438b3c71729c2a96d5a/e4a3f/layer3.png 295w,
+/static/f9dcb43e3297f438b3c71729c2a96d5a/fcda8/layer3.png 590w,
+/static/f9dcb43e3297f438b3c71729c2a96d5a/5a190/layer3.png 800w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In layer 3 we can see that the model is starting to learn more specific things. The first square shows that the model is now able to recognize geometrical patterns. The sixth square is recognizing car tires. And the eleventh square is recognizing people.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/538599044d8f9033312285511b290641/00d43/layer5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 24.324324324324326%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsSAAALEgHS3X78AAABG0lEQVQY0w2NS0/CQBhF++uMG1YoaBqRCKJjpw9KCkO/zqOPEWpqSynRxKgLo4GdsjRqMETj33Ju7uom5x6NizCgjDIuotj3XWSgkecSxxGC52VFyBiA+hBQoFFe2qjhoQYy6tjorlePWhRLxSsyTqQ3wFxmljs8PWtNr2Re3UIAjHPKVMJZkUTkKHbbrqO36ruz+UJjQgSMKbmCab9l4Q67lGR0OE06WRqPfYBAhRKA+2J+zSOk14SnD3p7H39bTUrJ1DkLlToB07ebWQY5G+b2QZEKNatfUA1oUZYm7p3s18h503baX5+v2uZ7s6gWgoeTSVqlsWceJ6j7MLzIqPX+tt7+/C6XK8VzLqqbO4ytgY0z0G1n5+nl+R+wLZRKtKZErAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;layer5&quot;
+        title=&quot;layer5&quot;
+        src=&quot;/static/538599044d8f9033312285511b290641/fcda8/layer5.png&quot;
+        srcset=&quot;/static/538599044d8f9033312285511b290641/12f09/layer5.png 148w,
+/static/538599044d8f9033312285511b290641/e4a3f/layer5.png 295w,
+/static/538599044d8f9033312285511b290641/fcda8/layer5.png 590w,
+/static/538599044d8f9033312285511b290641/efc66/layer5.png 885w,
+/static/538599044d8f9033312285511b290641/00d43/layer5.png 1000w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Finally, layers 4 and 5 continue this trend. Layer 5 is picking up tings that are very useful for our dogs and cats problem. It is also recognizing unicycles and bird/reptile eyes. Be aware that these images only show a very small fraction of things learned by each layer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As the network went deeper, the features became more high-level and abstrated for human to recongnize. The pretrained vgg16 will be able to filter out the objects in one image.&lt;/p&gt;
+&lt;h2&gt;Representation of Content&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d20eef1a53fd3fa204018097dd48d381/bca35/rep_content.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 79.05405405405406%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAACHUlEQVQ4y3VU2XKjMBDk/79u35xKquIYG5tTB+hCQvSOYG2D41VBgaDV6pmeUYZ3Y6Zrnh/Ttmtxu91wvpxR1RVijCtsXoC7pdmO59/P9Ly/29GiLEscj0fk5xxDP+ww2zUPwleirTp+7tALCWMMBj3A1QbQhMH8ljTbqtsSOeugmIIXDlgjXEOla1ZxScu76LJXMiEETvkJjDFUZQUu+SZf62JrLbq2Q57naJoGIYSnwi2Z1gacC/ycfuCDB+Mczo2/IqibGh+fn2TShQhrTISd503Id2BxOeFa/EBISc4y3C5f9NP9CqvrOnwe/uB6LVBeT/Cmfrq8glbgqEtM4+pimCYIXqGXLbSxGMdxR5pI5riGanSPvpd093dCAowG3qlH8tu2BWeC0qBRVRWGYXgqjR5xWpWnjXo5oCC138fvNeSWQkhhlOUNEynzPqBuK1T8SibJxaj7SOXTdQ2pEVBKQzuNvDlCEo4LjiyBk5pkwDCox8IADz62u9KIUyS1Na7UNck8RnlWk4T07JnDFEraVVB5MFvvCNxkdnPpGI7NFyzlVEhBcw4f91Wwaz0dhgWQ6kopBSY7KhtHKfDrtyCprqflNnFAoFy+dlr22j7jZJfD4FJcIPt+ca4oCgjFEGYPG/SycYzT2/7PXpvbUHErcja5m5/POBwOi8tJlQ3moep/h8mvw0FSUScy6ywdVfVSDvfj6l3fb+s4jb/9vOBeeklLEAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;rep content&quot;
+        title=&quot;rep content&quot;
+        src=&quot;/static/d20eef1a53fd3fa204018097dd48d381/fcda8/rep_content.png&quot;
+        srcset=&quot;/static/d20eef1a53fd3fa204018097dd48d381/12f09/rep_content.png 148w,
+/static/d20eef1a53fd3fa204018097dd48d381/e4a3f/rep_content.png 295w,
+/static/d20eef1a53fd3fa204018097dd48d381/fcda8/rep_content.png 590w,
+/static/d20eef1a53fd3fa204018097dd48d381/bca35/rep_content.png 683w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The structure of the content image could be easily extracted using the output of the last convolutional layer of vgg16.&lt;/p&gt;
+&lt;h2&gt;Representation of Style&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/986fc3f1ebbd6c5d5803aab6c1ab8807/62de4/rep_style.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 53.37837837837838%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABPUlEQVQoz21Si46DMAzj/79yd7pptwF98yoDHw4LqjgiRQXVcRyn1bquKIP/U56QQkLXdWjaBu/3G1exLAuGYUBKCdEH3L5uqHgxzzOmadozZxhr4K1Hignee2hTnnm7V1zf92jbFl3qNsKIV/1CRdA4jpLspgXOO1hrEWM8CKmUGMXnD6lzTvBMIaTCZV0OpXVdS6ELTr7LEYnZ8StCCKKQFjWmwf1+3wlZTL/YlZG6fVRjjBRpUCFxTPWV6oil11QrhLzU8yrKkflNpedlalS8VP9UIcHnZOSPJVTCsa+wQpjVl6Lz+dTXwEVQKbGXCukBN8ksPTuro2/0ijhiiC0nOgijixjjgId94GmeUlQSyqibKm6TBClF/Px+o25qGf8/4dYtbK/ceisPUxdTEo7TeLxJeSqmlf8rW/4AZjNc60hUJXsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;rep style&quot;
+        title=&quot;rep style&quot;
+        src=&quot;/static/986fc3f1ebbd6c5d5803aab6c1ab8807/fcda8/rep_style.png&quot;
+        srcset=&quot;/static/986fc3f1ebbd6c5d5803aab6c1ab8807/12f09/rep_style.png 148w,
+/static/986fc3f1ebbd6c5d5803aab6c1ab8807/e4a3f/rep_style.png 295w,
+/static/986fc3f1ebbd6c5d5803aab6c1ab8807/fcda8/rep_style.png 590w,
+/static/986fc3f1ebbd6c5d5803aab6c1ab8807/62de4/rep_style.png 746w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Similarly, the style of one image could also be extratced using the same method.&lt;/p&gt;
+&lt;h2&gt;Feature and Gram Matrix&lt;/h2&gt;
+&lt;p&gt;The activation map is a combined matrix which are high-level features human can easily recongnize.&lt;/p&gt;
+&lt;p&gt;In style transfer, network need to convert them into another shape for the traning and testing procedure.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, convert the activation map into feature matirx.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 475px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3d1d42e258bf0bcd10b07e2b626101b9/466da/feature_matrix.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.4054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABmUlEQVQoz3VSDW/qMAzs//9zexowCWlUglJKurWFtE3zfcsFwd4kMDKXS+KL7brAE4sxZmzbFnVdo2kafO4+UZ/qp/f+x4J/z5xGsVNzwvF4xG63y+6cy+d3DCH8iSvwwu6iwzBkpABtf9hnEWbsvcfmY/MnrhjHEdM0gciMhBCPYGMM3v694Xw+o0pZ8my9WeNyueB99Z55VVXoug5936NJ9wouDmnzUB1Q7kuIbwGpJNSiUJYlrlJmATqzlYkzhkg+XIbMudZa/5YsF4nteYtts8XquEL9XaPvevj0s85CO43FLNjU64zkLFk7k/FRcmrlrWfJPQJssAjRQymVS2Iv2RK+LtkeO0NOY65AjhLWWozpnJwtKqKL8EMSkQ6hs/CNRmws1NcE8SXySxSz2mLRC0Kb8KrgnceiEvcBRpvHVy9iiDcxlfIbE0oLzAHqOkO0STAkOs9ZcEroxIJpGLMIM+e+mlV+lKW/HBtmw5JpnABjTUaXGjPOtxaQs2QKs0VcF6+Gmhc4LjQGc594HydyIs2mcjmbtB/HEVRC7KPVMAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;feature matrix&quot;
+        title=&quot;feature matrix&quot;
+        src=&quot;/static/3d1d42e258bf0bcd10b07e2b626101b9/466da/feature_matrix.png&quot;
+        srcset=&quot;/static/3d1d42e258bf0bcd10b07e2b626101b9/12f09/feature_matrix.png 148w,
+/static/3d1d42e258bf0bcd10b07e2b626101b9/e4a3f/feature_matrix.png 295w,
+/static/3d1d42e258bf0bcd10b07e2b626101b9/466da/feature_matrix.png 475w&quot;
+        sizes=&quot;(max-width: 475px) 100vw, 475px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Each row of feature matrix represents different features, each column represent each pixel in activation map.&lt;/p&gt;
+&lt;p&gt;The feature matrix contains all the inforamtion in style image.&lt;/p&gt;
+&lt;p&gt;Another information needs to be known is the relationship between different features. The inner product of the feature matrix could describe the relationship in a clear manner. The new matrix is named as gram matrix.&lt;/p&gt;
+&lt;p&gt;In python, the gram matrix could be easily calculated (F is feature matrix):&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;def Gram(F):
+    return np.dot(F.T, F) / F.size&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;The gram matrix is illustrated on the following. Each element in the gram matrix will represent 2 features on the row and column respectively.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 424px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e6590ccc3dbb0c50055b3e011f261194/1cfa9/gram_matrix.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsSAAALEgHS3X78AAACpklEQVQ4y41U227aQBD1P1fKP1SNlNeqfazylB9I1VZRpCgUE4IxwY6UQgoFJ1BuBhtf16c7Y9ZxTJA60mi9F585c2Z2NZQsyzJ29V3dq9pbaxreMHUwEQlSkSJJE56LtZxPQx6zWOyR2AMsbz6vntHoN1B7qOHh+YHX4skWyTRAMguRejEEMohUQIgX18qMyoB+6MMaW7iwL+AsnTyiL92T7krf4E3TykBV+lEaIU1TRHGE1WqFx199dLtddAwT5nULZkuOnQ5M00SHxo55WEPDMFD/Wcfl5SX71dUVblu3uLu7g2VZ6N5bsO9t2LbNQWidXKOf/cjHbDNDb9qDs3KQiQznX8+x3W5ZlziO8b/GDG2pld7TcaafYbQY8YbRNnh8f/wBxycnuQRRBF3X0TLyPdd1MVss4K7XeReoonihh8Hf3zCHJnqTHm82b5sIggA3zSbaUiMFuJAA8/mctaXvUK6RJ0mCOIkloKyByKgBcot3PddutzGdTotU6GeaUxDf95md4zjwPA9ryVB5XmWpmVjKvopSiDBlAKraeDzmQBSd9FSpqfTWpfkrDYWfIrY3fAPiSVAwnEwmnJ4lK6kK8/HzJ3w5PS00XMp2Wrnuaw0zyYqvUygQ9WXnSlqGaeDp6YlTGo1GrB+B1up1XNdqDEAMiT15wbB6wUWap9wyWhgOh8V6EIbMSBlJQM1OxQnlHmm7Dbb7N4Voc5VldRWg53tcFJKAGG82G8zmM85AsSNAcq16h9Mdw8bNDQaDAX9TW1DKBJTtziiA4Z8hvv34fvj5egFs8GECI9EJkNlJXyyXDEaa1hs63h0dFYT2AMsp9x/7xTrpRAxVRhRgKYGrb8BBQLr45u6GKI3KRSHtqKWqj7J26LVWVSxLUX4kaK4ClDvlHx+3AMLN9dZIAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;gram matrix&quot;
+        title=&quot;gram matrix&quot;
+        src=&quot;/static/e6590ccc3dbb0c50055b3e011f261194/1cfa9/gram_matrix.png&quot;
+        srcset=&quot;/static/e6590ccc3dbb0c50055b3e011f261194/12f09/gram_matrix.png 148w,
+/static/e6590ccc3dbb0c50055b3e011f261194/e4a3f/gram_matrix.png 295w,
+/static/e6590ccc3dbb0c50055b3e011f261194/1cfa9/gram_matrix.png 424w&quot;
+        sizes=&quot;(max-width: 424px) 100vw, 424px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;If one element on the gram matrix is large, the relation between these 2 features will be stronger. For example, in one cell, the row represent the tree, the column is flower, the value is larger means this artist prefers the combination of tree and flower.&lt;/p&gt;
+&lt;p&gt;The size of gram matrix is only determined by the number of feature map. In style transfer, the input size is not strictly defined.&lt;/p&gt;
+&lt;h1&gt;Training Progress&lt;/h1&gt;
+&lt;p&gt;The whole process is showed on the following.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/da2ff99480227e9353883c1846687931/e4611/style_transfer_sketch.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 127.02702702702702%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAIAAAC+dZmEAAAACXBIWXMAAC4jAAAuIwF4pT92AAADC0lEQVQ4y41UyY4cRRD1b/rMyfIX4BsnHzgZJIT4AXzAJ7gZDgiJA0gzlrE98jLYrumpPSv3LXIjsrrabTMecHRVKysyX74XEZlxo3zEMr7Rc8f/1tMpiMs0yTzZoqBAOsxXu1GusZxcsLNdzlLQJZYScuY+DyYRW3L+L3BOIYJMIJE/gYrAU7LbFPdpNNeCUzCgW6TFQV2dI6jOyyaB3gtOk8k6XAXXSTCTIU9BtSnaVQWAeAv8PMeNvPiYenOt7GCnnMN+HFNcxEiX11wtzm94jDybcAWMKo0JggatcsREFetNTy6GpR1pKzXbVgmfmf83GAF+nj0h+ETn0EP48Lp9sZvePL94zNSyxoa/jJFfAacUhHBdB5ynEFZmTfg4s54p6oM75nU8gPPBUqrHIChVRynmEIxVRIwduVBGFHSBz2udj2DvvbXWGKOkrHsARAA5I1+vhVBWUEkkxQgGfEIMRzBShBAQzxhTWlePc8gpKF3GkTOCsnuyW+i4DCOfRqT/AAwACEYSjaEirTHILIaBta0SjKIGPkhGFaWG86NslIqEyAzW8r4XTeMpjUpFa0XX0beNogQDbueG00mMk16WfV4q2DmntYYQrJSKMSsEMtecYfwYxbJQNi1iwiLPc6sZR3VHsF0tYnm954yhkK0SMYp5nrtWsIVrapySnJK2RedRNmKQHGXHlLQx+Pmu4Bi/4WKYL6mYOtIoyfDTCL7tPqwJw52c98hptQS3nV4vpV6InMZxagZ6KTRmvlNk1oRUZkiZ2A2Mfw5SM5tm0hZqJULMu57tOoxWrIXNMURM/zAusaQiAI/38Xje+/a7259/cf+HB8ZW5T/98vvNO1/euvvVbyen+wU/Pvz1szvffP39zxBd4ZAVbGDM9snJn2d//cFJv/c8e3Z2+uTR2fkrqbYUvnx1fvr46a4bkTj1+uP3+dChSlGhXNi87xH5vVaDnUTCB+C4Wj5A67XAGsxbx6meel9jHLEHuv/pnu/6El56TGxtncxj99lzfip4VZWx6VQJMb/ft/8BeH+i/pcXvO8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;style transfer sketch&quot;
+        title=&quot;style transfer sketch&quot;
+        src=&quot;/static/da2ff99480227e9353883c1846687931/fcda8/style_transfer_sketch.png&quot;
+        srcset=&quot;/static/da2ff99480227e9353883c1846687931/12f09/style_transfer_sketch.png 148w,
+/static/da2ff99480227e9353883c1846687931/e4a3f/style_transfer_sketch.png 295w,
+/static/da2ff99480227e9353883c1846687931/fcda8/style_transfer_sketch.png 590w,
+/static/da2ff99480227e9353883c1846687931/efc66/style_transfer_sketch.png 885w,
+/static/da2ff99480227e9353883c1846687931/c83ae/style_transfer_sketch.png 1180w,
+/static/da2ff99480227e9353883c1846687931/e4611/style_transfer_sketch.png 1298w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In the forward propagation, input the style image and content image into the network, extracted the feature.&lt;/li&gt;
+&lt;li&gt;For each the content image, the content loss is determined as the the sum of all the training images.&lt;/li&gt;
+&lt;li&gt;The cost function is the sum of the style loss and content loss.&lt;/li&gt;
+&lt;li&gt;In the forward propagation, compute the gradient of total loss over the content image. Take the gradient descent until total loss converges.&lt;/li&gt;
+&lt;li&gt;The content loss is a determined value defined by the training images.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Minimize the loss&lt;/h2&gt;
+&lt;p&gt;The calculation equation of the style loss and content loss is actually the equation of mean square function (MSE).&lt;/p&gt;
+&lt;h2&gt;MSE Equation&lt;/h2&gt;
+&lt;p&gt;In the training the loss will be the Mean Square Error (MSE) equation. &lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5832a13becfbaed8bbd194efe7dc89f4/9100a/mse.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 39.86486486486486%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3oFB/8QAFhABAQEAAAAAAAAAAAAAAAAAAAEx/9oACAEBAAEFAmI//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAGhAAAQUBAAAAAAAAAAAAAAAAEQABITFxQf/aAAgBAQABPyEObjEXtLYi6v/aAAwDAQACAAMAAAAQgA//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEBAAIDAAAAAAAAAAAAAAABEQBBITFR/9oACAEBAAE/ECtS6GFVdPOmCFdrxqGf/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;mse&quot;
+        title=&quot;mse&quot;
+        src=&quot;/static/5832a13becfbaed8bbd194efe7dc89f4/1c72d/mse.jpg&quot;
+        srcset=&quot;/static/5832a13becfbaed8bbd194efe7dc89f4/a80bd/mse.jpg 148w,
+/static/5832a13becfbaed8bbd194efe7dc89f4/1c91a/mse.jpg 295w,
+/static/5832a13becfbaed8bbd194efe7dc89f4/1c72d/mse.jpg 590w,
+/static/5832a13becfbaed8bbd194efe7dc89f4/a8a14/mse.jpg 885w,
+/static/5832a13becfbaed8bbd194efe7dc89f4/9100a/mse.jpg 959w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Definition of Total Loss&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 476px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/cf32ed1f1c05cd420539d3c047fa6ba9/f2205/total.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 10.81081081081081%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsSAAALEgHS3X78AAAAYklEQVQI1z2NOQ5EMQxC//0PmSKrsq9KSkammMIyPCz89d4RY8QYA6LXWnjv/X2tFa01jrC9N+69yDkzK6WQiRb+yZFSisB7z/JzDlJKPNZaw1pLH0LgnnNSO+eYS4cxhk9/6ISWqYNg674AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;total&quot;
+        title=&quot;total&quot;
+        src=&quot;/static/cf32ed1f1c05cd420539d3c047fa6ba9/f2205/total.png&quot;
+        srcset=&quot;/static/cf32ed1f1c05cd420539d3c047fa6ba9/12f09/total.png 148w,
+/static/cf32ed1f1c05cd420539d3c047fa6ba9/e4a3f/total.png 295w,
+/static/cf32ed1f1c05cd420539d3c047fa6ba9/f2205/total.png 476w&quot;
+        sizes=&quot;(max-width: 476px) 100vw, 476px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Training Loss Plot&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The loss plot in the training progress. It only takes 4 epoches, approximately 320000 iterations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6605827edb897b19e1c54c041bcc7e9b/084e2/loss_plot.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 85.8108108108108%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsSAAALEgHS3X78AAAB+UlEQVQ4y51U/XOiMBDl//+z+uu1nZuCVr5FBAWkUSsQEsK7TarOaXXO3s4s5GPz8l42WUsphWEY0DQNri1JEriuizRNzd9xHLzZNjZVhXtmacCyLFFRUN/34JyfPY5jeJ6H5XKJMAxNezabYbVeY9t0+CQSXdei7Tq0bQspJSyNKkRP3xHjOEJvcPJ7tj8c4C+W8KMY0+nEKGgMeAdr1AzZForArk1vcOEUq6OafY0uf8YicPDy+puYu6jr2qgyDOsiwyDFbZAr1zaoAWKQ6IUwIFquZieob+kQtvChjGycF92ze/N6XOfAMCxiF8MDgKe5m6zpphjAXkhs0giy5w8xvLeJTqIBXGY5oql9wXD8D8AzQ93J45DuVHsp50HYbwx1Zx4FyFfFeeIn0m8y3LMa7x5l+ivE3MkTy4sEYPw3Qz0gqFEmPmw/AlenRRpEPeQ4vrAjoMLheH4sixEuMuwl0KsfJdtI5vwombdbiK7EcMiQ2E/IywWiLMJk+oogsOH5DsLoHX4wga/b4RTz+QzzmMb8NyouqQE1xUEjl0WOrtmS76A4w65KwIoIbRmAb2J8rj1k/guaKiSPcChDpLNfdEwO9isXDVuBbXdg7OPrDKUcLuh3XNJ7pWQ1HKuyxrr6QDhPUWwYCmr3FM4F1dG/cqTftK44fwDLtyp0nSn7qQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;loss plot&quot;
+        title=&quot;loss plot&quot;
+        src=&quot;/static/6605827edb897b19e1c54c041bcc7e9b/fcda8/loss_plot.png&quot;
+        srcset=&quot;/static/6605827edb897b19e1c54c041bcc7e9b/12f09/loss_plot.png 148w,
+/static/6605827edb897b19e1c54c041bcc7e9b/e4a3f/loss_plot.png 295w,
+/static/6605827edb897b19e1c54c041bcc7e9b/fcda8/loss_plot.png 590w,
+/static/6605827edb897b19e1c54c041bcc7e9b/084e2/loss_plot.png 632w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;VGG 16 was used to extract the feature and reconstruct images.&lt;/li&gt;
+&lt;li&gt;Training the network takes very long time, a light CNN may be used for time reduction.&lt;/li&gt;
+&lt;li&gt;The tune of parameter α and β to change the output.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Demo Video&lt;/h1&gt;
+&lt;p&gt;The real-time demo video is here:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=5WqvDl81Cj0s&quot;&gt;https://www.youtube.com/watch?v=5WqvDl81Cj0s&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Or referenced the gif:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/6517f354dface24f613f24431dc169f8/demo.gif&quot;&gt;&lt;/p&gt;
+&lt;h1&gt;Training Dataset&lt;/h1&gt;
+&lt;p&gt;The training dataset uses the Microsoft COCO 2014 dataset.&lt;/p&gt;
+&lt;p&gt;The size of the dataset is 14GB which has 80000 images in total.&lt;/p&gt;
+&lt;h1&gt;GitHub Page&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jmnie/CS539-ML-18F-Project&quot;&gt;https://github.com/jmnie/CS539-ML-18F-Project&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Presentation Slides&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://prezi.com/kxdwilsggigw/machine_learning_pre/?utm_campaign=share&amp;#x26;utm_medium=copy&quot;&gt;https://prezi.com/kxdwilsggigw/machine_learning_pre/?utm_campaign=share&amp;#x26;utm_medium=copy&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I’m sure I’ll write a lot more interesting things in the future. Oh, and here’s a…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/hello-world/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
+&lt;p&gt;I’m sure I’ll write a lot more interesting things in the future.&lt;/p&gt;
+&lt;p&gt;Oh, and here’s a great quote from this Wikipedia on
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A salted duck egg is a Chinese preserved food product made by soaking duck
+eggs in brine, or packing each egg in damp, salted charcoal. In Asian
+supermarkets, these eggs are sometimes sold covered in a thick layer of salted
+charcoal paste. The eggs may also be sold with the salted paste removed,
+wrapped in plastic, and vacuum packed. From the salt curing process, the
+salted duck eggs have a briny aroma, a gelatin-like egg white and a
+firm-textured, round yolk that is bright orange-red in color.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/e1596/salty_egg.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMB/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAEEBf/aAAwDAQACEAMQAAABgik0dXC//8QAGRABAAMBAQAAAAAAAAAAAAAAAQACEhEy/9oACAEBAAEFAkqW2DlnRj73yf/EABcRAQADAAAAAAAAAAAAAAAAAAAREkH/2gAIAQMBAT8B1WX/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQL/2gAIAQIBAT8Bi6f/xAAbEAABBAMAAAAAAAAAAAAAAAAAAQIRISIxMv/aAAgBAQAGPwK9GNocyS8hCj//xAAbEAADAQADAQAAAAAAAAAAAAABESEAMUGBof/aAAgBAQABPyGxNMfrLHmCDZmAzzvJJDjEQCHv/9oADAMBAAIAAwAAABDIL//EABYRAQEBAAAAAAAAAAAAAAAAAAERAP/aAAgBAwEBPxARhylZv//EABgRAAIDAAAAAAAAAAAAAAAAAAABESFR/9oACAECAQE/EFoktI//xAAdEAEBAAICAwEAAAAAAAAAAAABEQAxIWFBcYHh/9oACAEBAAE/EEbMLQ0fMHDVaPIXyI4pk4JUnWacNCtO8ojDE9TGIYES7/Jn/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Chinese Salty Egg&quot;
+        title=&quot;Chinese Salty Egg&quot;
+        src=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/1c72d/salty_egg.jpg&quot;
+        srcset=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/a80bd/salty_egg.jpg 148w,
+/static/8058f3f26913fea3b6a89a73344fe94a/1c91a/salty_egg.jpg 295w,
+/static/8058f3f26913fea3b6a89a73344fe94a/1c72d/salty_egg.jpg 590w,
+/static/8058f3f26913fea3b6a89a73344fe94a/a8a14/salty_egg.jpg 885w,
+/static/8058f3f26913fea3b6a89a73344fe94a/fbd2c/salty_egg.jpg 1180w,
+/static/8058f3f26913fea3b6a89a73344fe94a/e1596/salty_egg.jpg 2048w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
