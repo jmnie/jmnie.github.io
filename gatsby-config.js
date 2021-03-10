@@ -8,23 +8,22 @@ module.exports = {
     description: `Personal blog based on gatsby.js.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `RoyalNull`,
-      github: 'jmnie'
+      twitter: `jiaming_nie`,
+      github: "jmnie",
     },
 
-    menuLinks:[
+    menuLinks: [
       {
-        name: 'Home',
-        link: '/',
-        icon: 'Home'
+        name: "Home",
+        link: "/",
+        icon: "Home",
       },
       {
-        name: 'About',
-        link: '/about',
+        name: "About",
+        link: "/about",
         //icon: 'Group'
       },
-
-    ]
+    ],
   },
   plugins: [
     {
@@ -91,13 +90,10 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    'gatsby-plugin-dark-mode',
+    "gatsby-plugin-dark-mode",
     `gatsby-plugin-offline`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-
-}
-
-
+};
