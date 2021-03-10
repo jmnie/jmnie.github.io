@@ -1,2 +1,2 @@
 
-This is my personla blog built with gatsby.js. 
+This is my personal blog built with gatsby.js. 
