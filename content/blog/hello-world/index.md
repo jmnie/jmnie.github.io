@@ -4,19 +4,24 @@ date: "2020-09-01"
 description: "Hello World & Writing Blog Here"
 ---
 
-This is my first post on my new fake blog! How exciting!
+This is actually my first Blog here. This site will be a place for backing up new ideas and any related progress from the work or just a note for something funny. 
 
-I'm sure I'll write a lot more interesting things in the future.
+I'm Jiaming Nie, A software engineer who is weak in coding and interested in dreaming new ideas. 
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
+Some links about me:
+[GitHub Page](https://github.com/jmnie).
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
 
-![Chinese Salty Egg](./salty_egg.jpg)
+> Oh God, I could be bounded in a nutshell and count myself a king of infinite space,
+> were it not that I have bad dreams. 
+> Small? No, I could live in a walnut shell and feel like the king of the universe.
+
+                        ------- *Hamlet*, Act 2 Sene 2, William Shakespeare
+
+
+> Do not quench your inspiration and your imagination;
+> do not become the slave of your model.
+
+                        ------- *Vincent Van Gogh*
+
+
