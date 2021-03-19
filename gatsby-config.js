@@ -8,9 +8,8 @@ module.exports = {
     description: `Personal blog based on gatsby.js.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `jiaming_nie`,
+      twitter: `jeremyMinus`,
       github: "jmnie",
-      
     },
 
     menuLinks: [
