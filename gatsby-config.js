@@ -10,6 +10,7 @@ module.exports = {
     social: {
       twitter: `jiaming_nie`,
       github: "jmnie",
+      
     },
 
     menuLinks: [

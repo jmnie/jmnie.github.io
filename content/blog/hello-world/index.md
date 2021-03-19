@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: Hello World 
 date: "2020-09-01"
 description: "Hello World & Writing Blog Here"
 ---
@@ -16,12 +16,12 @@ Some links about me:
 > were it not that I have bad dreams. 
 > Small? No, I could live in a walnut shell and feel like the king of the universe.
 
-                        ------- *Hamlet*, Act 2 Sene 2, William Shakespeare
+    ------- Hamlet, Act 2 Sene 2, William Shakespeare
 
 
 > Do not quench your inspiration and your imagination;
 > do not become the slave of your model.
 
-                        ------- *Vincent Van Gogh*
+    ------- Vincent Van Gogh
 
 
