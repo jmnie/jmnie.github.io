@@ -95,7 +95,7 @@ After installing the Visual Studio and setting the environment variables, next s
 
 Build from FireFox from source code is pretty easier. 
 
-## Reference Links
+### Reference Links
 
 Here is the link for buidling Firefox on Windows (won't paste the content here, just follow the instructions):
 
@@ -104,7 +104,12 @@ Here is the link for buidling Firefox on Windows (won't paste the content here, 
 Remarks on the note:
 1. Install Python 3.x and Python 2.7 (not sure why the script still requires Python2 dependency, and set the environment variables on Windows if multiple versions of Python did not work as expected )
 2. When set the system proxy, remember to set the following:
-   - http proxy 
+   - http proxy
    - https proxy (when set https proxy, use http://your_proxy removing 's')
    - socks5 proxy (crucial)
-3. If the toolchain 'mach' failed on certain steps, just perform some other actions. 
+3. If the toolchain 'mach' failed on certain steps, just perform some other actions.
+
+### Building Old Versions FireFox
+(This section is added on 2021/04/08 ) When build FireFox with some lower versions, there are several problems I have seen:
+1. The Rust version is not compatiable
+2. The script (Mainly in Python, for the purpose to update) needs to sync with the server and check the versions. 
