@@ -114,3 +114,83 @@ A simple demo: https://simpl.info/rtcpeerconnection/
 ## RTCDataChannel: Birdirectional Communication of Arbitrary Data Between Peers
 
 ![RTCDataChannel Application](./images/rtc_connect.png)
+
+### RTCDataChannel
+- Sample API as WebSockets
+- Ultra-low Latency
+- Unreliable or Reliable
+- Secure
+
+Sample code of the API:
+
+```
+var pc = new webkitRTCPeerConnection(servers,
+  {optional: [{RtpDataChannels: true}]});
+
+pc.ondatachannel = function(event) {
+  receiveChannel = event.channel;
+  receiveChannel.onmessage = function(event){
+    document.querySelector("div#receive").innerHTML = event.data;
+  };
+};
+
+sendChannel = pc.createDataChannel("sendDataChannel", {reliable: false});
+
+document.querySelector("button#send").onclick = function (){
+  var data = document.querySelector("textarea#send").value;
+  sendChannel.send(data);
+};
+```
+
+A simple demo: http://www.simpl.info/dc
+
+## Servers and Protocols
+
+WebRTC based on peer-to-peer communication, but servers are needed.
+
+### Abstract Signaling
+
+- Need to exchange "session description" objects
+  - What formats I support, what I want to send
+  - Network Information for peer-to-peer setup
+
+- Can use any messaging mechanism
+- Can use any messaging protocol
+
+### Signaling Diagram
+
+![Signaling Diagram](./images/jsep.png)
+
+## Several Architectures
+
+### Peer-to-Peer: one-to-one call
+
+![Peer-to-Peer](./images/p2p.png)
+
+### Mesh: small N-way Call
+
+![Mesh: Small N-way Call](./images/mesh.png)
+
+### Star: Medium N-way Call
+
+![Star: Medium N-way Call](./images/star.png)
+
+### MCU: Large N-way Call
+
+
+![Star: Medium N-way Call](./images/mcu.png)
+
+# Application Scenarios
+
+There are mainly two application scenarios: small (or tiny) video/audio meeting or some online learning session.
+
+## Scenraio I: Video Conference
+
+
+![Scenario I: P2P Communication](./images/s1_1.png)
+
+![Scenario I: Signaling Mechanism](./images/s1_2.png)
+
+## Scenario II: Live Stream
+
+![Scenario II: Live Stream](./images/s2.png)
