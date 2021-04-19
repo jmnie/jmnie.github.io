@@ -165,20 +165,20 @@ WebRTC based on peer-to-peer communication, but servers are needed.
 
 ### Peer-to-Peer: one-to-one call
 
-![Peer-to-Peer](./images/p2p.PNG)
+![Peer-to-Peer](./images/p2p.png)
 
 ### Mesh: small N-way Call
 
-![Mesh: Small N-way Call](./images/mesh.PNG))
+![Mesh: Small N-way Call](./images/mesh.png))
 
 ### Star: Medium N-way Call
 
-![Star: Medium N-way Call](./images/star.PNG))
+![Star: Medium N-way Call](./images/star.png))
 
 ### MCU: Large N-way Call
 
 
-![Star: Medium N-way Call](./images/mcu.PNG))
+![Star: Medium N-way Call](./images/mcu.png))
 
 # Application Scenarios
 
@@ -187,10 +187,10 @@ There are mainly two application scenarios: small (or tiny) video/audio meeting 
 ## Scenraio I: Video Conference
 
 
-![Scenario I: P2P Communication](./images/s1_1.PNG))
+![Scenario I: P2P Communication](./images/s1_1.png))
 
-![Scenario I: Signaling Mechanism](./images/s1_2.PNG))
+![Scenario I: Signaling Mechanism](./images/s1_2.png))
 
 ## Scenario II: Live Stream
 
-![Scenario II: Live Stream](./images/s2.PNG))
+![Scenario II: Live Stream](./images/s2.png))
