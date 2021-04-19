@@ -160,4 +160,4 @@ The size of the dataset is 14GB which has 80000 images in total.
 https://github.com/jmnie/CS539-ML-18F-Project
 
 # Presentation Slides
-https://prezi.com/kxdwilsggigw/machine_learning_pre/?utm_campaign=share&utm_medium=copy
+https://prezi.com/kxdwilsggigw/
