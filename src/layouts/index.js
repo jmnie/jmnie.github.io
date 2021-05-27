@@ -1,4 +1,7 @@
 import React from "react";
+
+import { graphql } from "gatsby";
+
 import injectSheet from "react-jss";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
