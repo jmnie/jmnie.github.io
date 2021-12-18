@@ -1,101 +1,83 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import "./blog-post.css"
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
-  const { previous, next } = pageContext
+import Sidebar from "../components/sidebar/Sidebar"
+import TechTag from "../components/tags/TechTag"
+import CustomShareBlock from "../components/CustomShareBlock"
+
+const BlogPost = (props) => {
+  const post = props.data.markdownRemark
+  const labels = props.data.site.siteMetadata.labels
+  const siteName = props.data.site.siteMetadata.title 
+  const siteUrl = props.data.site.siteMetadata.url
+  const url = `${siteUrl}${props.pageContext.slug}`;
+  const tags = post.frontmatter.tags
+
+  const getTechTags = (tags) => {
+    const techTags = []
+    tags.forEach((tag, i) => {
+      labels.forEach((label) => {
+        if (tag === label.tag) {
+          techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size} color={label.color} />)
+        }
+      })
+    })
+    return techTags
+  }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
-      <article>
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
+    <Layout>
+      <SEO title={post.frontmatter.title} />
+      <div className="post-page-main">
+        <div className="sidebar px-4 py-2">
+          <Sidebar />
+        </div>
 
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+        <div className="post-main">
+          <SEO title={post.frontmatter.title} />
+          <div className="mt-3">
+            <h2 className="heading">{post.frontmatter.title}</h2>
+            <div className="d-block">
+              {getTechTags(tags)}
+            </div>
+            <br />
+            <small><i>Published on </i> {post.frontmatter.date}</small>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <CustomShareBlock title={post.frontmatter.title} siteName={siteName} url={url} />
+          </div>
+        </div>
+      </div>
     </Layout>
   )
 }
 
-export default BlogPostTemplate
-
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
+export const query = graphql`
+  query($slug: String!) {
+      site {
+        siteMetadata {
+          url
+          title
+          labels {
+              tag
+              tech 
+              name 
+              size 
+              color
+          }
+        }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
       html
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
+        tags
       }
     }
   }
 `
+
+export default BlogPost
