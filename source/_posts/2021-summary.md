@@ -46,7 +46,9 @@ description: "The Summary for 2021"
 
 但是时间仍在继续向前，还有无数微小的瞬间等待我去填满。西西弗斯并不会停止他的劳作。
 
-"真正的英雄主义，大概是不重复造轮子，在时间线上不停做建设"。
+> "不要在乎面子，不要在乎结果，做了才有结果，不要逃避，要勇敢。
+> 当你好好做完一件事的时候，那天的食物会变得更加好吃。
+> 就算是为了美味的食物和畅快的心情，扔掉一些本来会很介意的东西吧。"
 
 > "_That's all I do all day. I'd just be the catcher in the rye and all. I know it's crazy, but that's the only thing I'd really like to be._"
 
