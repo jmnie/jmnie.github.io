@@ -1,6 +1,7 @@
 ---
 title: WPI CS 539 Project - Images Style Transfer Using CNN
 date: "2018-12-09T10:00Z"
+tags: [tech, EN]
 description: This webpage is the host page for the WPI CS 539 Group project 2018 Fall.
 ---
 

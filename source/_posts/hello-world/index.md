@@ -1,6 +1,7 @@
 ---
 title: Hello World 
 date: "2020-09-01"
+tags: [non-tech, EN]
 description: "Hello World & Writing Blog Here"
 ---
 

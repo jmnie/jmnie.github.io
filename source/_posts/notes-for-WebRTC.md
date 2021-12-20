@@ -1,6 +1,7 @@
 ---
 title: A Brief Intro to WebRTC
 date: "2021-04-15"
+tags: [tech, EN]
 description: "This blog is a transcript about high-level intro to WebRTC."
 ---
 

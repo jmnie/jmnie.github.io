@@ -1,6 +1,7 @@
 ---
 title: Build Chromium and FireFox from Source Code (Windows as Example)
 date: "2021-03-17"
+tags: [tech, EN]
 description: "This blog is a note recording the problems met when building chromium and firefox from source code."
 ---
 

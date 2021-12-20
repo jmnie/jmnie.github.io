@@ -1,6 +1,7 @@
 ---
 title: Learning Data Structure & Algorithm
 date: "2020-09-03"
+tags: [tech, CN]
 description: "学习数据结构和算法的总结。"
 ---
 ## Preface 
