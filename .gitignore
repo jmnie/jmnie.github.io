@@ -7,3 +7,4 @@ public/
 .deploy*/
 
 .vscode/settings.json
+.DS_Store

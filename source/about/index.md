@@ -1,6 +1,8 @@
 ---
-title: about
+layout: about
+title: Singular Point of Jiaming's Nutshell
 date: 2021-12-19 23:05:44
+description: "About Page"
 ---
 
 I'm Jiaming Nie. A developer. A creator. An unprofessional photograher. 

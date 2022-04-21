@@ -28,21 +28,21 @@ social:
   linkedin: https://www.linkedin.com/in/jmnie/
   steam: 
   others: 
-  rss: 
+  rss: /atom.xml
 # friends
 friends:
   # friendA: //www.baidu.com
   # friendB: //www.google.com
 about:
   enable: true
-  image: '/intro/about-bg.jpg'
+  image: '/intro/about_nwu.jpg'
 # Search for website
 search:
-  enable: false
+  enable: true
   # Seach URL, must be set. For example: 'fi3ework.github.io'
-  url: 
+  url: jmnie.github.io
   # Search engine: 'bing' (default), 'google' or 'baidu'
-  engine: bing
+  engine: google
 # Display icons of friends, about and search
 # You can only use free icons started with 'fab' and 'fas' by default
 # https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=brands,solid&m=free
@@ -71,13 +71,13 @@ SEO_keywords:
 # main title shown in header image
 main_title: Jiaming Nie's Nutshell
 # subtitle
-subtitle: it's better to burn out than to fade away
+subtitle: Do not quench your inspiration and your imagination; do not become the slave of your model.
 # site haeder image
-site_header_image: '/intro/index-bg.jpg'
+site_header_image: '/intro/index_2020.jpg'
 # post haeder image
-post_header_image: '/intro/post-bg.jpg'
+post_header_image: '/intro/post_matrix.jpg'
 # 404 image
-_404_image: '/intro/404-bg.jpg'
+_404_image: '/intro/404_seattle.jpg'
 
 # ========== Theme ========== #
 # Truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
