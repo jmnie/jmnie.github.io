@@ -105,7 +105,7 @@ deploy:
   type: git
   repo:
     github:
-      url: git@github.com:jmnie/jmnie.github.io.git
+      url: https://github.com/jmnie/jmnie.github.io.git
       branch: master
   name: jmnie
   email: jiaming.nie13@gmail.com
