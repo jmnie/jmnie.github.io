@@ -9,7 +9,9 @@ description: "This post is about some details and mistakes I had ran into."
 
 ## 1. Rethink 2020: What Went Wrong?
 
-### 
+### Trivial Work and Innovative Work 
+
+### Learning Data Structure Systematically 
 
 
 ## 2. Live as a Senior, Work as a Senior 
