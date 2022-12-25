@@ -110,6 +110,9 @@ deploy:
   name: jmnie
   email: jiaming.nie13@gmail.com
 
+# Microsoft Clarity Analytics
+clarity_analytics: f3uw6t5d7z
+
 jsonContent:
   meta: true
   pages: false
