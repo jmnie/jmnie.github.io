@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+    
+
+<!-- keywords -->
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Jiaming Nie">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Jiaming Nie">
+    
+        <meta name="keywords" content="Jiaming Nie,jiaming,jiaming-blog">
+    
+    <meta name="description" content="Jiaming Nie's Blog">
+    <meta name="description" content="This blog is a note recording the problems met when building chromium and firefox from source code.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Build Chromium and FireFox from Source Code (Windows as Example)">
+<meta property="og:url" content="https://jmnie.github.io/2021/03/17/build_chromium_firefox/index/index.html">
+<meta property="og:site_name" content="blog">
+<meta property="og:description" content="This blog is a note recording the problems met when building chromium and firefox from source code.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-17T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-01T14:10:59.835Z">
+<meta property="article:author" content="Jiaming Nie">
+<meta property="article:tag" content="tech">
+<meta property="article:tag" content="EN">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/assets/stary_night.ico">
+    
+    <title>Build Chromium and FireFox from Source Code (Windows as Example) · Jiaming Nie&#39;s Nutshell</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
+    <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
+    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
+</head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+    
+        <body class="post-body">
+    
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+            <div class="header-sidebar-menu">
+        
+            
+                <div style="padding-left: 1px;">&#xe775;</div>
+            
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href=/>Jiaming Nie's Nutshell</a>
+        </span>
+    </div>
+    <!-- toggle banner for post layout -->
+    
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">Jiaming Nie&#39;s Nutshell</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">Build Chromium and FireFox from Source Code (Windows as Example)</a>
+            </div>
+        </div>
+    
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
+        
+            <div class="back-top back-top-hidden">
+        
+        
+            <div>&#xe639;</div>
+        
+        </div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="
+
+
+
+
+
+
+
+    height:50vh;
+
+">
+    
+    <!-- 主页  -->
+    
+        
+    <!-- 404页  -->
+    
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post_matrix.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+                Build Chromium and FireFox from Source Code (Windows as Example)
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+                
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="tech">tech</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="EN">EN</a>
+    
+</div>
+
+                
+                <!-- 文章字数统计 -->
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">966</span>Reading time: <span class="post-count reading-time">6 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2021/03/17</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><p>Build project from source code is always an interesting stuff. This blog is about how to build chromium and firefox from source code.</p>
+<p>Note: Actuallt it’s not a blog, it’s a small guidance for how to get through the whole workflow (Especially in some regions requiring proxy or VPN to access the chromium source code repository.)</p>
+<h2 id="Build-chromium-from-source-code"><a href="#Build-chromium-from-source-code" class="headerlink" title="Build chromium from source code"></a>Build chromium from source code</h2><h2 id="Reference-Links"><a href="#Reference-Links" class="headerlink" title="Reference Links"></a>Reference Links</h2><p>The guidance is edited from an internal wiki page. Tried several times, very useful. Before the main content, here are some useful official links for Chromium project:</p>
+<p>Here is the official link for building chromium on different platforms:<br><a target="_blank" rel="noopener" href="https://www.chromium.org/developers/how-tos/get-the-code">The Chromium Projects</a></p>
+<p>Official Guidance for building Chromium for Windows (A little verbose and more universal):<br><a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/master/docs/windows_build_instructions.md">Build Chromium on Windows</a></p>
+<p><a target="_blank" rel="noopener" href="https://bitbucket.org/chromiumembedded/cef/src/master/">Chromium Embedded Framework, CEF</a> is a project for maintaining different branches of chromium source code and related work of chromium itself. </p>
+<p>Here are 3 links that’s useful in building chromium from the CEF project:</p>
+<p>It’s a wrap-up link for setting up on different OS.<br><a target="_blank" rel="noopener" href="https://bitbucket.org/chromiumembedded/cef/wiki/MasterBuildQuickStart.md">Build QuickStart</a></p>
+<p>A description which involves more details in environment variables and related configuration (on Windows).<br><a target="_blank" rel="noopener" href="https://bitbucket.org/chromiumembedded/cef/wiki/AutomatedBuildSetup.md#markdown-header-windows-configuration">Build Setup</a></p>
+<h2 id="Guidance"><a href="#Guidance" class="headerlink" title="Guidance"></a>Guidance</h2><h3 id="Pre-requisites"><a href="#Pre-requisites" class="headerlink" title="Pre-requisites"></a>Pre-requisites</h3><table>
+<thead>
+<tr>
+<th>Actions</th>
+<th>Remark</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Install Visual Studio</strong></td>
+<td>Community Edition has met the reuqirement. Note for the installation:</td>
+<td><a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/master/docs/windows_build_instructions.md">Chromium Offical Docs</a></td>
+</tr>
+<tr>
+<td></td>
+<td>1. Desktop development with C++ (including <strong>MFC and   ATL support</strong>)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>2. Install Windows 10 SDK installed, latest version is preferred</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Setup depot_tools</strong></td>
+<td><a target="_blank" rel="noopener" href="http://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools.html">depot_tools</a> is a tool for maintaing the source (Cubersome to use)</td>
+<td><a target="_blank" rel="noopener" href="http://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up">depot_tools Doc</a></td>
+</tr>
+<tr>
+<td>Add depot_tools to path (system environment variable on Win)</td>
+<td>Unzip the folder, or you can git clone the <a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/tools/depot_tools.git">repository</a></td>
+<td>Add it to the system variables in case</td>
+</tr>
+<tr>
+<td>Add system environment variable <strong>DEPOT_TOOLS_WIN_TOOLCHAIN: 0</strong></td>
+<td>SET DEPOT_TOOLS_WIN_TOOLCHAIN&#x3D;0</td>
+<td><a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/master/docs/windows_build_instructions.md">Chromium Guide</a></td>
+</tr>
+<tr>
+<td>Add system environment variables <strong>GYP_GENERATORS</strong> &amp; <strong>GYP_MSVS_VERSION</strong></td>
+<td>SET GYP_GENERATORS&#x3D;msvs-ninja,ninja</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>SET GYP_MSVS_VERSION&#x3D;2019 (if you use other versions please chnage)</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>These are environment settings for preparations of building chromium on Windows. </p>
+<h3 id="Build-Chromium"><a href="#Build-Chromium" class="headerlink" title="Build Chromium"></a>Build Chromium</h3><p>After installing the Visual Studio and setting the environment variables, next step is to fetch the source code from Chromium source code repository. The following table is a detailed instruction (Note: ** Follow the step exactly one by one, especially setting the proxy **)</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Run Command &amp; Operations</th>
+<th>Running Path</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Prepare</strong></td>
+<td>netsh winhttp set proxy <a href="url:port">url:port</a></td>
+<td></td>
+<td><strong>Run the command in CMD</strong> in case did not work</td>
+</tr>
+<tr>
+<td></td>
+<td>git config –global user.name <your name></your></td>
+<td></td>
+<td>Set your git use info</td>
+</tr>
+<tr>
+<td></td>
+<td>git config –global user.email <your email></your></td>
+<td></td>
+<td>Set your git use info</td>
+</tr>
+<tr>
+<td></td>
+<td>git config –global http.proxy <a href="url:port">url:port</a></td>
+<td></td>
+<td>Set git proxy</td>
+</tr>
+<tr>
+<td></td>
+<td>git config –global https.proxy <a href="url:port">url:port</a></td>
+<td></td>
+<td>Note: when set https proxy, use <strong>http:&#x2F;&#x2F;</strong> ,do not use https:&#x2F;&#x2F;</td>
+</tr>
+<tr>
+<td></td>
+<td>set HTTP_PROXY&#x3D;<a href="url:port">url:port</a></td>
+<td></td>
+<td>Set global proxy</td>
+</tr>
+<tr>
+<td></td>
+<td>set HTTPS_PROXY&#x3D;<a href="url:port">url:port</a></td>
+<td></td>
+<td>when set https proxy, use <strong>http:&#x2F;&#x2F;</strong> ,do not use https:&#x2F;&#x2F;</td>
+</tr>
+<tr>
+<td></td>
+<td>set SOCKS5_PROXY&#x3D;<a href="url:port">url:port</a></td>
+<td></td>
+<td><strong>Compulsory.If SOCKS5 is not set, will encounter problems when running scripts in depot_tools</strong></td>
+</tr>
+<tr>
+<td><strong>BOTO config</strong></td>
+<td>This step is also to create the proxy.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Create a file with extension “.boto”, e.g. proxy_config.boto</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>The BOTO content:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>[Boto]</td>
+<td></td>
+<td>Save the file somewhere you like, for example, C:\proxy_config.boto</td>
+</tr>
+<tr>
+<td></td>
+<td>proxy&#x3D;<proxy_url></proxy_url></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>proxy_port&#x3D;<proxy_port></proxy_port></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>SET NO_AUTH_BOTO_CONFIG&#x3D;C:\proxy_config.boto</strong></td>
+<td></td>
+<td>In Windows, add a new variable in system environment variables.</td>
+</tr>
+<tr>
+<td><strong>Running gclient</strong></td>
+<td>gclient</td>
+<td></td>
+<td><strong>Run the command in CMD</strong>, it will install an individual python and other tools.</td>
+</tr>
+<tr>
+<td><strong>Fetch Master</strong></td>
+<td>fetch chromium</td>
+<td>Parent directory of chromium src directory</td>
+<td>Download the source code from master, may take a very long time, depending on the internet connection.</td>
+</tr>
+<tr>
+<td><strong>Update Master</strong></td>
+<td>git checkout master</td>
+<td>chromium src directory</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>git pull</td>
+<td>chromium src directory</td>
+<td>pull changes list</td>
+</tr>
+<tr>
+<td></td>
+<td>gclient sync</td>
+<td>chromium src directory</td>
+<td>synchronize dependencies and third parties</td>
+</tr>
+<tr>
+<td><strong>Switch to working branch</strong></td>
+<td>git checkout -b <local branch name> <tag name></tag></local></td>
+<td>chromium src directory</td>
+<td>example: git checkout -b Chromium_39.0.2171.71 39.0.2171.71. Go to <a target="_blank" rel="noopener" href="http://www.chromium.org/developers/calendar">Chrome Calendar</a> to find latest stable branch (tag), in “Current Release Information”, win, stable, current_version</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Note: you may need to run <strong>“git fetch –tags”</strong> to fetch all tags first</td>
+</tr>
+<tr>
+<td></td>
+<td>gclient sync –with_branch_heads –jobs 16</td>
+<td>chromium src directory</td>
+<td>to sync all solution related code, dependencies and third parties of current branch</td>
+</tr>
+<tr>
+<td><strong>Generate solution file</strong></td>
+<td>gn args out&#x2F;<build name></build></td>
+<td>chromium src directory</td>
+<td>for example: gn args out&#x2F;Default</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>in the opened editor, set at least following build args.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>is_debug&#x3D;false</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>target_cpu&#x3D;”x64”</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>See <a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/master/tools/gn/docs/quick_start.md">parameters</a></td>
+</tr>
+<tr>
+<td><strong>Build solution</strong></td>
+<td>ninja -C out&lt;build name&gt; chrome</td>
+<td>chromium src directory</td>
+<td>build x64 bit to src\out&lt;build name&gt; folder, could take 4 hours</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>See <a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/master/docs/windows_build_instructions.md">build instructions</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Note: you may need to add “C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um” to PATH system environment variable</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Note: you may need to modify <strong>“out\Default\environment.x64”</strong> file, changing all 10.0.15063.0 to 10.0.16299.0 (for correct Win SDK version).</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Build-FireFox-from-source-code"><a href="#Build-FireFox-from-source-code" class="headerlink" title="Build FireFox from source code"></a>Build FireFox from source code</h2><p>Build from FireFox from source code is pretty easier. </p>
+<h3 id="Reference-Links-1"><a href="#Reference-Links-1" class="headerlink" title="Reference Links"></a>Reference Links</h3><p>Here is the link for buidling Firefox on Windows (won’t paste the content here, just follow the instructions):</p>
+<p><a target="_blank" rel="noopener" href="https://firefox-source-docs.mozilla.org/setup/windows_build.html">Build FireFox on Windows</a></p>
+<p>Remarks on the note:</p>
+<ol>
+<li>Install Python 3.x and Python 2.7 (not sure why the script still requires Python2 dependency, and set the environment variables on Windows if multiple versions of Python did not work as expected )</li>
+<li>When set the system proxy, remember to set the following:<ul>
+<li>http proxy</li>
+<li>https proxy (when set https proxy, use <a target="_blank" rel="noopener" href="http://your_proxy/">http://your_proxy</a> removing ‘s’)</li>
+<li>socks5 proxy (crucial)</li>
+</ul>
+</li>
+<li>If the toolchain ‘mach’ failed on certain steps, just perform some other actions.</li>
+</ol>
+<h3 id="Building-Old-Versions-FireFox"><a href="#Building-Old-Versions-FireFox" class="headerlink" title="Building Old Versions FireFox"></a>Building Old Versions FireFox</h3><p>(This section is added on 2021&#x2F;04&#x2F;08 ) When build FireFox with some lower versions, there are several problems I have seen:</p>
+<ol>
+<li>The Rust version is not compatiable</li>
+<li>The script (Mainly in Python, for the purpose to update) needs to sync with the server and check the versions.</li>
+</ol>
+
+    </article>
+    <!-- license -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://jmnie.github.io">Jiaming Nie</a>
+            <p>Link：<a href="https://jmnie.github.io/2021/03/17/build_chromium_firefox/index/">https://jmnie.github.io/2021/03/17/build_chromium_firefox/index/</a>
+            <p>Publish date：<a href="https://jmnie.github.io/2021/03/17/build_chromium_firefox/index/">March 17th 2021, 8:00:00 am</a>
+            <p>Update date：<a href="https://jmnie.github.io/2021/03/17/build_chromium_firefox/index/">September 1st 2022, 10:10:59 pm</a>
+            <p>License：This article uses <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)</a> for permission.</p>
+        </div>
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2021/04/15/notes-for-WebRTC/" title="A Brief Intro to WebRTC">
+                    <div class="nextTitle">A Brief Intro to WebRTC</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2020/09/03/study_data_structure/index/" title="Learning Data Structure & Algorithm">
+                    <div class="prevTitle">Learning Data Structure & Algorithm</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+
+            
+
+            
+
+            
+
+            <!-- utteranc评论 -->
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
+            
+            
+
+            
+
+        </div>
+    
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <!-- Mathjax -->
+    
+</main>
+
+                <!-- profile -->
+                
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+        <div class="social">
+            
+    
+        
+            
+                <a href="mailto:jiaming.nie13@gmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/jmnie" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.facebook.com/jiaming.nie" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+            
+        
+    
+        
+            
+                <a href="https://twitter.com/jiaming_nie" class="iconfont-archer twitter" target="_blank" title=twitter></a>
+            
+        
+    
+        
+            
+                <a href="https://www.instagram.com/ammannecho/" class="iconfont-archer instagram" target="_blank" title=instagram></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.linkedin.com/in/jmnie/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
+            
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
+            
+        
+    
+
+
+        </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    
+    <!-- 不蒜子  -->
+    
+        <div class="busuanzi-container">
+            
+             
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+            
+        </div>
+    	
+</footer>
+
+        </div>
+        <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Preface"><span class="toc-number">1.</span> <span class="toc-text">Preface</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Build-chromium-from-source-code"><span class="toc-number">2.</span> <span class="toc-text">Build chromium from source code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference-Links"><span class="toc-number">3.</span> <span class="toc-text">Reference Links</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Guidance"><span class="toc-number">4.</span> <span class="toc-text">Guidance</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pre-requisites"><span class="toc-number">4.1.</span> <span class="toc-text">Pre-requisites</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Build-Chromium"><span class="toc-number">4.2.</span> <span class="toc-text">Build Chromium</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Build-FireFox-from-source-code"><span class="toc-number">5.</span> <span class="toc-text">Build FireFox from source code</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference-Links-1"><span class="toc-number">5.1.</span> <span class="toc-text">Reference Links</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Building-Old-Versions-FireFox"><span class="toc-number">5.2.</span> <span class="toc-text">Building Old Versions FireFox</span></a></li></ol></li></ol>
+            </div>
+        
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 9
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+        
+            
+            
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span>
+            <a class="archive-post-title" href="/2022/12/25/2022-farewell-mess/">和2022作别</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/parallel_computing/">Parallel Computing Notes</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/15</span>
+            <a class="archive-post-title" href="/2022/01/15/wechat_miniprogram/">WeChat MiniProgram Development</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/20</span>
+            <a class="archive-post-title" href="/2021/12/20/2021-summary/">2022, Far and Beyond</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span>
+            <a class="archive-post-title" href="/2021/04/15/notes-for-WebRTC/">A Brief Intro to WebRTC</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/2021/03/17/build_chromium_firefox/index/">Build Chromium and FireFox from Source Code (Windows as Example)</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span>
+            <a class="archive-post-title" href="/2020/09/03/study_data_structure/index/">Learning Data Structure & Algorithm</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span>
+            <a class="archive-post-title" href="/2020/09/01/hello-world/index/">Hello World</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2018 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2018/12/09/ml-project/">WPI CS 539 Project - Images Style Transfer Using CNN</a>
+        </li>
+    
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+        
+            <span class="sidebar-tag-name" data-tags="non-tech">
+                <span class="iconfont-archer">&#xe606;</span>
+                non-tech
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="CN">
+                <span class="iconfont-archer">&#xe606;</span>
+                CN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="tech">
+                <span class="iconfont-archer">&#xe606;</span>
+                tech
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="EN">
+                <span class="iconfont-archer">&#xe606;</span>
+                EN
+            </span>
+        
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "https://jmnie.github.io",
+        root: siteMetaRoot,
+        author: "Jiaming Nie"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+
+        <!-- main func -->
+        <script src="/scripts/main.js?v=20211217"></script>
+        <!-- dark mode -->
+        <script src="/scripts/dark.js?v=20211217"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+        <!-- algolia -->
+        
+        <!-- busuanzi -->
+        
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        
+        <!-- CNZZ -->
+        
+        <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20211217" async></script>
+        
+        <!-- mermaid -->
+        
+    </body>
+</html>
