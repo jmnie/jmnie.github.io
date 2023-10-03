@@ -4,9 +4,9 @@ date: "2021-12-20"
 template: "post"
 draft: false
 slug: "/posts/2021-summary"
-category: "tech"
+category: "non-tech"
 tags:
-  - "tech"
+  - "non-tech"
   - "CN"
 description: "The Summary for 2021"
 ---

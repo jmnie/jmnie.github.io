@@ -4,7 +4,7 @@ date: "2022-12-25"
 template: "post"
 draft: false
 slug: "/posts/2022-farewell-mess"
-category: "tech"
+category: "non-tech"
 tags:
   - "non-tech"
   - "CN"
