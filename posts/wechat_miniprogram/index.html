@@ -1,0 +1,444 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.25.7"/><meta name="description" content="This blog is a transcript about basic intro to WeChat Mini-Program." data-gatsby-head="true"/><meta name="twitter:card" content="summary_large_image" data-gatsby-head="true"/><meta name="twitter:title" content="WeChat MiniProgram Development - Jiaming Nie&#x27;s Nutshell" data-gatsby-head="true"/><meta name="twitter:description" content="This blog is a transcript about basic intro to WeChat Mini-Program." data-gatsby-head="true"/><meta name="og:title" content="WeChat MiniProgram Development - Jiaming Nie&#x27;s Nutshell" data-gatsby-head="true"/><meta name="og:type" content="website" data-gatsby-head="true"/><meta name="og:description" content="This blog is a transcript about basic intro to WeChat Mini-Program." data-gatsby-head="true"/><meta name="theme-color" content="hsl(31, 92%, 62%)"/><style data-href="/styles.2ccffdad1682a3257a62.css" data-identity="gatsby-global-css">:after,:before,:root{--color-white:#fff;--color-primary:#5c92ff;--color-secondary:#f7a145;--color-prism-background:#eaeaeb;--color-typographic-base-font:#242933;--color-typographic-link-p-font:#5c92ff;--color-typographic-link-s-font:#f7a145;--color-page-border:#eaeaeb;--color-page-background:#fff;--color-sidebar-border:#eaeaeb;--color-sidebar-border-fade:#fff;--color-contacts-border:#eaeaeb;--color-button-border:#eaeaeb;--color-button-color:#242933;--color-theme-switcher:#3f485a;--color-theme-switcher-hover:#5c92ff}.dark :after,.dark :before,:root.dark{--color-white:#fff;--color-primary:#5c92ff;--color-secondary:#f7a145;--color-prism-background:#191d24;--color-typographic-base-font:#fff;--color-typographic-link-p-font:#5c92ff;--color-typographic-link-s-font:#f7a145;--color-page-border:#3f485a;--color-page-background:#242933;--color-sidebar-border:#3f485a;--color-sidebar-border-fade:#242933;--color-contacts-border:#3f485a;--color-button-border:#3f485a;--color-button-color:#fff;--color-theme-switcher:#eaeaeb;--color-theme-switcher-hover:#5c92ff}html{font-size:100}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;background:var(--color-page-background);color:var(--color-typographic-base-font);font-size:16px;line-height:1.625;margin:0 0 0 calc(100vw - 100%);text-rendering:optimizelegibility}body,h1,h2,h3,h4,h5,h6{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif}h1,h2,h3,h4,h5,h6{font-weight:600}h1{font-size:40px;line-height:52px;margin-bottom:26px;margin-top:104px}h2{font-size:27px;line-height:39px}h2,h3{margin-bottom:13px;margin-top:52px}h3{font-size:22px;line-height:26px}h4{font-size:19.2px;margin-top:39px}h4,h5{line-height:26px;margin-bottom:13px}h5,h6{font-size:16px;margin-top:65px}h6{line-height:26px;margin-bottom:13px}img{max-width:100%}hr,img{border:0;display:block}hr{background-image:linear-gradient(180deg,transparent 1px,transparent 11px,#242933 0,#242933 15px,transparent 0,transparent 26px);background-size:100% 26px;color:var(--color-typographic-base-font);height:26px;margin:52px auto;width:100px}a{color:var(--color-typographic-link-p-font);text-decoration:none}a:active,a:focus,a:hover{color:var(--color-typographic-link-s-font)}b,strong{font-weight:600}ul{list-style:square;margin-bottom:26px}ul li{margin-bottom:10px;padding:0 5px}p{line-height:26px;margin-bottom:26px}blockquote{font-style:italic;padding:0;text-align:center}figure{display:block;height:auto;width:100%}figcaption{color:var(--color-typographic-base-font);font-size:14px;font-style:italic;line-height:19.5px;margin-bottom:0;margin-top:6.5px;text-align:center}@media screen and (min-width:685px){figure.float-left,figure.float-right{max-width:310px;padding:0 26px}.float-right{float:right}.float-left{float:left}}code[class*=language-],pre[class*=language-]{word-wrap:normal;color:#657b83;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:var(--color-prism-background)}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#073642}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#93a1a1}.token.punctuation{color:#586e75}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#268bd2}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string,.token.url{color:#2aa198}.token.entity{background:#eee8d5;color:#657b83;cursor:help}.token.atrule,.token.attr-value,.token.keyword{color:#859900}.token.class-name,.token.function{color:#b58900}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.Feed-module--feed--a6204 .Feed-module--item--c7a63{margin-bottom:32.5px}.Feed-module--feed--a6204 .Feed-module--item--c7a63:last-child{margin-bottom:13px}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--title--f252f{font-size:27px;line-height:39px;margin-bottom:13px;margin-top:0}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--title--f252f .Feed-module--link--6123b{color:var(--color-typographic-base-font)}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--title--f252f .Feed-module--link--6123b:focus,.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--title--f252f .Feed-module--link--6123b:hover{border-bottom:1px solid #242933;color:var(--color-typographic-base-font)}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--description--57348{font-size:16px;line-height:26px;margin-bottom:19.5px}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--meta--250c2 .Feed-module--time--72864{color:var(--color-typographic-base-font);font-size:14px;font-weight:600;text-transform:uppercase}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--meta--250c2 .Feed-module--divider--81a18{margin:0 13px}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--meta--250c2 .Feed-module--category--59f58 .Feed-module--link--6123b{color:var(--color-secondary);font-size:14px;font-weight:600;text-transform:uppercase}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--meta--250c2 .Feed-module--category--59f58 .Feed-module--link--6123b:focus,.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--meta--250c2 .Feed-module--category--59f58 .Feed-module--link--6123b:hover{color:#5c92ff}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--more--51a4e{color:var(--color-primary);font-size:16px}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--more--51a4e:focus,.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--more--51a4e:hover{border-bottom:1px solid #5c92ff;color:var(--color-primary)}.Layout-module--layout--2c933{margin-left:auto;margin-right:auto;max-width:1070px}.Layout-module--layout--2c933:before{content:"";display:table}.Layout-module--layout--2c933:after{clear:both;content:"";display:table}.Page-module--page--24e03{margin-bottom:52px}.Page-module--page--24e03 .Page-module--inner--4b31d{padding:26px 19.5px 0}.Page-module--page--24e03 .Page-module--title--90338{font-size:40px;font-weight:600;line-height:52px;margin-bottom:37.7px;margin-top:0}.Page-module--page--24e03 .Page-module--body--561c4{font-size:16px;line-height:26px;margin:0 0 26px}@media screen and (min-width:685px){.Page-module--page--24e03{width:calc(58.275% - 12.5px)}.Page-module--page--24e03:nth-child(1n){clear:none;float:left;margin-right:30px}.Page-module--page--24e03:last-child{margin-right:0}.Page-module--page--24e03:nth-child(12n){float:right;margin-right:0}.Page-module--page--24e03:nth-child(12n+1){clear:both}.Page-module--page--24e03 .Page-module--inner--4b31d{padding:32.5px 19.5px 0}}@media screen and (min-width:960px){.Page-module--page--24e03{width:calc(66.6% - 10px)}.Page-module--page--24e03:nth-child(1n){clear:none;float:left;margin-right:30px}.Page-module--page--24e03:last-child{margin-right:0}.Page-module--page--24e03:nth-child(3n){float:right;margin-right:0}.Page-module--page--24e03:nth-child(3n+1){clear:both}.Page-module--page--24e03 .Page-module--inner--4b31d{padding:39px 26px 0}}.Pagination-module--pagination--d61cb{display:flex;margin-top:52px}.Pagination-module--pagination--d61cb .Pagination-module--previous--4a76b{text-align:left;width:50%}.Pagination-module--pagination--d61cb .Pagination-module--previous--4a76b .Pagination-module--previousLink--5590d{color:var(--color-secondary);font-size:26px;font-weight:700}.Pagination-module--pagination--d61cb .Pagination-module--previous--4a76b .Pagination-module--previousLink--5590d:focus,.Pagination-module--pagination--d61cb .Pagination-module--previous--4a76b .Pagination-module--previousLink--5590d:hover{color:var(--color-primary)}.Pagination-module--pagination--d61cb .Pagination-module--previous--4a76b .Pagination-module--previousLink--5590d.Pagination-module--disable--7e105{color:#3f485a;pointer-events:none}.Pagination-module--pagination--d61cb .Pagination-module--next--1cab8{text-align:right;width:50%}.Pagination-module--pagination--d61cb .Pagination-module--next--1cab8 .Pagination-module--nextLink--532ff{color:var(--color-secondary);font-size:26px;font-weight:700}.Pagination-module--pagination--d61cb .Pagination-module--next--1cab8 .Pagination-module--nextLink--532ff:focus,.Pagination-module--pagination--d61cb .Pagination-module--next--1cab8 .Pagination-module--nextLink--532ff:hover{color:var(--color-primary)}.Pagination-module--pagination--d61cb .Pagination-module--next--1cab8 .Pagination-module--nextLink--532ff.Pagination-module--disable--7e105{color:#3f485a;pointer-events:none}.Button-module--button--b1113{border:1px solid var(--color-button-border);border-radius:20px;color:var(--color-button-color);display:inline-block;font-size:16px;font-weight:400;height:40px;line-height:40px;margin-left:auto;margin-right:auto;padding:0 26px;text-align:center;text-decoration:none}.Button-module--button--b1113:focus,.Button-module--button--b1113:hover{color:#5c92ff}.ThemeSwitcher-module--themeSwitcher--8a77f{--color:var(--color-theme-switcher)}.ThemeSwitcher-module--themeSwitcher--8a77f .ThemeSwitcher-module--button--7cb7b{align-items:center;background:transparent;border:0;cursor:pointer;display:flex;justify-content:center;outline:0}.ThemeSwitcher-module--themeSwitcher--8a77f .ThemeSwitcher-module--button--7cb7b svg{stroke:var(--color);pointer-events:none;transition:stroke .4s}.ThemeSwitcher-module--themeSwitcher--8a77f .ThemeSwitcher-module--button--7cb7b:hover{--color:var(--color-theme-switcher-hover)}.ThemeSwitcher-module--themeSwitcher--8a77f .ThemeSwitcher-module--moon--10537{stroke-dasharray:0 1px;opacity:0;transition:stroke-dasharray .2s ease-in,opacity .4s ease-in}.ThemeSwitcher-module--themeSwitcher--8a77f .ThemeSwitcher-module--sun--2163a{stroke-dasharray:1px 1px;opacity:1;transition:stroke-dasharray .2s ease-in,opacity .4s ease-in}.ThemeSwitcher-module--themeSwitcher--8a77f.ThemeSwitcher-module--dark--6db0c .ThemeSwitcher-module--moon--10537{stroke-dasharray:1px 1px;opacity:1}.ThemeSwitcher-module--themeSwitcher--8a77f.ThemeSwitcher-module--dark--6db0c .ThemeSwitcher-module--sun--2163a{stroke-dasharray:0 1px;opacity:0}.Author-module--author--cbd31 .Author-module--photo--9787b{background-clip:padding-box;border-radius:50%;display:inline-block;height:75px;margin-bottom:0;width:75px}.Author-module--author--cbd31 .Author-module--photo--9787b img{border-radius:50%}.Author-module--author--cbd31 .Author-module--title--cf7e5{font-size:18px;font-weight:600;line-height:29.25px;margin:0}.Author-module--author--cbd31 .Author-module--title--cf7e5 .Author-module--link--09c17,.Author-module--author--cbd31 .Author-module--title--cf7e5 .Author-module--link--09c17:focus,.Author-module--author--cbd31 .Author-module--title--cf7e5 .Author-module--link--09c17:hover{color:var(--color-typographic-base-font)}.Author-module--author--cbd31 .Author-module--subtitle--86ec5{color:#7f8ba4;line-height:26px;margin-bottom:26px}.Author-module--author--cbd31 .Author-module--titleContainer--4f576{align-items:center;display:flex;justify-content:space-between;margin:13px 0}.Icon-module--icon--1d7da{fill:currentcolor;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;speak:none;stroke:currentcolor;stroke-width:0;display:inline-block;font-style:normal;font-variant:normal;font-weight:400;height:1em;line-height:1em;text-align:center;text-transform:none;width:1em}.Contacts-module--contacts--09178{margin-bottom:26px}.Contacts-module--contacts--09178 .Contacts-module--list--9670b{display:flex;flex-flow:row wrap;flex-grow:0;flex-shrink:0;list-style:none;margin:13px 0;max-width:165px;padding:0}.Contacts-module--contacts--09178 .Contacts-module--list--9670b .Contacts-module--item--f9cb0{align-content:center;align-items:center;border:1px solid var(--color-contacts-border);border-radius:50%;display:flex;height:40px;justify-content:center;line-height:40px;margin:6.5px;padding:0;text-align:center;width:40px}.Contacts-module--contacts--09178 .Contacts-module--list--9670b .Contacts-module--item--f9cb0:nth-child(3n+1){margin-left:0}.Contacts-module--contacts--09178 .Contacts-module--list--9670b .Contacts-module--item--f9cb0 .Contacts-module--link--de1e0{border:0;color:var(--color-typographic-base-font);cursor:pointer;display:flex}.Contacts-module--contacts--09178 .Contacts-module--list--9670b .Contacts-module--item--f9cb0 .Contacts-module--link--de1e0:focus,.Contacts-module--contacts--09178 .Contacts-module--list--9670b .Contacts-module--item--f9cb0 .Contacts-module--link--de1e0:hover{color:var(--color-typographic-link-p-font)}.Copyright-module--copyright--2c602{color:#7f8ba4;font-size:14px}.Menu-module--menu--113a9{margin-bottom:26px}.Menu-module--menu--113a9 .Menu-module--list--e1ae3{list-style:none;margin:0;padding:0}.Menu-module--menu--113a9 .Menu-module--list--e1ae3 .Menu-module--item--8b679{margin:13px 0;padding:0}.Menu-module--menu--113a9 .Menu-module--list--e1ae3 .Menu-module--item--8b679 .Menu-module--link--a6f02{border:0;color:var(--color-typographic-base-font);font-size:16px;font-weight:400}.Menu-module--menu--113a9 .Menu-module--list--e1ae3 .Menu-module--item--8b679 .Menu-module--link--a6f02:focus,.Menu-module--menu--113a9 .Menu-module--list--e1ae3 .Menu-module--item--8b679 .Menu-module--link--a6f02:hover{border-bottom:1px solid #5c92ff;color:#5c92ff}.Menu-module--menu--113a9 .Menu-module--list--e1ae3 .Menu-module--item--8b679 .Menu-module--link--a6f02.Menu-module--active--6cb74{border-bottom:1px solid var(--color-typographic-base-font);color:var(--color-typographic-base-font)}.Sidebar-module--sidebar--1bfa1{width:100%}.Sidebar-module--sidebar--1bfa1 .Sidebar-module--inner--344d0{padding:26px 19.5px 0;position:relative}.Sidebar-module--sidebar--1bfa1 .Sidebar-module--inner--344d0:after{background:var(--color-sidebar-border);background:linear-gradient(to bottom,var(--color-sidebar-border) 0,var(--color-sidebar-border) 48%,var(--color-sidebar-border-fade) 100%)}@media screen and (min-width:685px){.Sidebar-module--sidebar--1bfa1{width:calc(41.625% - 17.5px)}.Sidebar-module--sidebar--1bfa1:nth-child(1n){clear:none;float:left;margin-right:30px}.Sidebar-module--sidebar--1bfa1:last-child{margin-right:0}.Sidebar-module--sidebar--1bfa1:nth-child(12n){float:right;margin-right:0}.Sidebar-module--sidebar--1bfa1:nth-child(12n+1){clear:both}.Sidebar-module--sidebar--1bfa1 .Sidebar-module--inner--344d0{padding:32.5px 19.5px 0}.Sidebar-module--sidebar--1bfa1 .Sidebar-module--inner--344d0:after{bottom:0;content:"";height:540px;position:absolute;right:-10px;top:30px;width:1px}}@media screen and (min-width:960px){.Sidebar-module--sidebar--1bfa1{width:calc(33.3% - 20px)}.Sidebar-module--sidebar--1bfa1:nth-child(1n){clear:none;float:left;margin-right:30px}.Sidebar-module--sidebar--1bfa1:last-child{margin-right:0}.Sidebar-module--sidebar--1bfa1:nth-child(3n){float:right;margin-right:0}.Sidebar-module--sidebar--1bfa1:nth-child(3n+1){clear:both}.Sidebar-module--sidebar--1bfa1 .Sidebar-module--inner--344d0{padding:39px}}.Author-module--author--1c58d{border-top:1px solid var(--color-page-border);line-height:26px;margin-bottom:52px;margin-top:26px;max-width:640px;padding-top:26px}.Author-module--author--1c58d .Author-module--bio--08950 .Author-module--twitter--90647{display:block;text-decoration:underline}.Author-module--author--1c58d .Author-module--bio--08950 .Author-module--twitter--90647:focus,.Author-module--author--1c58d .Author-module--bio--08950 .Author-module--twitter--90647:hover{color:var(--color-typographic-link-s-font)}@media screen and (min-width:685px){.Author-module--author--1c58d{margin-left:auto;margin-right:auto}}.Content-module--content--80d58{margin:0 auto;max-width:945px;padding:0 13px}.Content-module--content--80d58 .Content-module--title--09504{font-size:32px;font-weight:600;line-height:42.9px;margin:26px auto 0;max-width:640px;text-align:center}.Content-module--content--80d58 .Content-module--body--726c2 figure{margin-bottom:26px}.Content-module--content--80d58 .Content-module--body--726c2 figure blockquote{font-style:italic;margin-top:0;padding:26px 0;text-align:center}.Content-module--content--80d58 .Content-module--body--726c2 figure blockquote p{font-size:26.9072px;line-height:39px;margin-bottom:26px;margin-top:0;max-width:640px}.Content-module--content--80d58 .Content-module--body--726c2 a{text-decoration:underline}.Content-module--content--80d58 .Content-module--body--726c2 *{margin-left:auto;margin-right:auto;max-width:640px}.Content-module--content--80d58 .Content-module--body--726c2 h2>a{visibility:hidden}.Content-module--content--80d58 .Content-module--body--726c2 h2>a>svg{fill:var(--color-typographic-base-font)}.Content-module--content--80d58 .Content-module--body--726c2 img{max-width:100%}@media screen and (min-width:960px){.Content-module--content--80d58{padding:0}.Content-module--content--80d58 .Content-module--title--09504{font-size:48px;line-height:58.5px;margin-bottom:39px;margin-top:58.5px}.Content-module--content--80d58 .Content-module--body--726c2,.Content-module--content--80d58 .Content-module--body--726c2 p{font-size:18px;line-height:29.25px;margin-bottom:29.25px}.Content-module--content--80d58 .Content-module--body--726c2 h2>a{padding-right:13px;visibility:unset}}.Meta-module--meta--dae0a .Meta-module--date--4d30d{font-style:italic}.Tags-module--tags--18589{margin-bottom:13px}.Tags-module--tags--18589 .Tags-module--list--82ae6{list-style:none;padding:0}.Tags-module--tags--18589 .Tags-module--list--82ae6 .Tags-module--item--52015{display:inline-block;margin:6.5px 0}@media screen and (min-width:685px){.Tags-module--tags--18589 .Tags-module--list--82ae6 .Tags-module--item--52015:first-child{margin-left:0;padding-left:0}}.Post-module--post--3a994 .Post-module--content--3c6e5{margin:0 auto}.Post-module--post--3a994 .Post-module--comments--d3b99,.Post-module--post--3a994 .Post-module--footer--f8705{margin:0 auto;max-width:640px;padding:0 13px}.Post-module--post--3a994 .Post-module--buttons--2972d{align-items:center;display:flex;justify-content:center;margin:26px 0 0;text-align:center}.Post-module--post--3a994 .Post-module--buttons--2972d .Post-module--buttonArticles--d793a{margin:0 13px 0 0}@media screen and (min-width:960px){.Post-module--post--3a994 .Post-module--comments--d3b99,.Post-module--post--3a994 .Post-module--footer--f8705{padding:0}.Post-module--post--3a994 .Post-module--buttons--2972d{left:30px;margin:0 13px 0 0;max-width:none;position:fixed;top:30px}}</style><title data-gatsby-head="true">WeChat MiniProgram Development - Jiaming Nie&#x27;s Nutshell</title><link rel="alternate" type="application/rss+xml" title="Jiaming Nie&#x27;s Nutshell" href="/rss.xml"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-73379983-2"></script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer && window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-73379983-2', {"send_page_view":false});
+      }
+      </script><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><link rel="icon" href="/favicon-32x32.png?v=0af87c90e278e620bc4a8d90275de9b2" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=0af87c90e278e620bc4a8d90275de9b2"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script></head><body><script>
+          void function() {
+            var cachedMode;
+
+            try {
+              var preferredTheme = JSON.parse(localStorage.getItem('diesel:theme-atom'));
+
+              if (preferredTheme && preferredTheme.mode) {
+                cachedMode = preferredTheme.mode;
+              }
+            } catch (err) { }
+
+            function setTheme(newTheme) {
+              document.documentElement.className = newTheme;
+            }
+
+            var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+            setTheme(cachedMode || (darkQuery.matches ? 'dark' : 'light'));
+          }()
+        </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Layout-module--layout--2c933"><div class="Post-module--post--3a994"><div class="Post-module--buttons--2972d"><a class="Button-module--button--b1113 Post-module--buttonArticles--d793a" href="/">All Articles</a></div><div class="Post-module--content--3c6e5"><div class="Content-module--content--80d58"><h1 class="Content-module--title--09504">WeChat MiniProgram Development</h1><div class="Content-module--body--726c2"><p>This blog is about WeChat Mini-Program development. This blog will not dive very deep about the usage of API and related development toolchains. It will focus on high-level stuff. Some parts of the content were presented in work.</p>
+<h1 id="wechat-mini-program-status-quo" style="position:relative;"><a href="#wechat-mini-program-status-quo" aria-label="wechat mini program status quo permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WeChat Mini-Program Status Quo</h1>
+<ul>
+<li>Over 400 million Daily active users</li>
+<li>Over 3.5 million Mini-Programs</li>
+<li>Over 60% of WeChat users use Mini-Programs</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a4ead218edf1d0cf249a475daa0e2fbc/0f246/miniprogram.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 63.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAADJUlEQVQ4y12S7U9TZxiH+b7sm3/APpllTEpPT9mSBjVCJjNxU1FgDBmhmWWgzjIGtS/nnLJZSlsodMirUNrSl9M3egQ2QNCBG0SSxS3OxC2LLpn/x7W0ECN+eHLnuXP/rt99389T5opVISVEpLgRKWHEHj2Gc0GPFBdLsXhccQOOhUqcCwKuuHCQE17VFXUlRkKkTE6KKGkBRRWQUjqm1pvxFWpwp0X8Wi1+rYaB/HGGl87gK5zCu3iiFAfy1QwunqQ/U4Ws6kt6RdVTJifEg4sBV7KC35+v8PfLX5jbaKewp5D51U5o+TzZHQcLP98gsW0lv2Mnt2tH23OXzF1JXUkvq8JhYNHJkzdx576Z/rwJW6Sc1cdDPH6+wvaTGE//u0dku5Ou8FG6pwz0jOuxRypR0vsw5TBQwBEV6JmpQJkrxz9lwDX3IfPxCUYCk4wMjzE6Oks86aIg1SEpIpZAOX139LjTAnLqNWCR7s4UHStp9b7LtMfEP9cvEsrV0qt08enZ8zQ1NXCuvoHhQTO/dTQTcNZiDh7DVgIaDgNLHaaN2MNHuR4Zpze8Qmi2kcR6L96gTGfHNW50W/nm2lU8qXGsSykmZ1rxTog44/vrUt4cWU6JKLn36YqtcXlui6mRBqLaZSRfD22tZr60XOGK2YI37MCifs6LQD3/jn6CM/Ue7jeBxYQjrSMyW82T+ZtooeMEZQO3pj8gtx4lly6wvHyX1R83iWhO2offYcJv4CvpKqLShy1WRX9aj5wy7P9DtypwM6Pn4Q+nITvPy+AFvs6JDBbOMHRbpsfah8Nuw2FTCCa6ibYdYajtbb6I+/Foa3RO6/k+u/8wJaCs6nBnq1mLWHgx1MLO4CmWxi6RW7Rg6+/i4oUmGj9r5FJ9M55wB1rLW2jtR5jfMBBaNOJKCq+NnBSRVB230tWEtW+Z+KmP1EwDSCH+HLOyvJ1la+MRG/cesLWxR2bThyNhYiz/MX/8dZfsZj2ORPmrPR50qMetGvFlPsKbq2MkdoIHgXOEb5tQd508epbh4dMYu89UJldb8KgnGcjXYE06+C5bh6JWIB8A/wfKdofNJNJ7LQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/a4ead218edf1d0cf249a475daa0e2fbc/8ac56/miniprogram.webp 240w,
+/static/a4ead218edf1d0cf249a475daa0e2fbc/d3be9/miniprogram.webp 480w,
+/static/a4ead218edf1d0cf249a475daa0e2fbc/e46b2/miniprogram.webp 960w,
+/static/a4ead218edf1d0cf249a475daa0e2fbc/34186/miniprogram.webp 1118w"
+              sizes="(max-width: 960px) 100vw, 960px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/a4ead218edf1d0cf249a475daa0e2fbc/8ff5a/miniprogram.png 240w,
+/static/a4ead218edf1d0cf249a475daa0e2fbc/e85cb/miniprogram.png 480w,
+/static/a4ead218edf1d0cf249a475daa0e2fbc/d9199/miniprogram.png 960w,
+/static/a4ead218edf1d0cf249a475daa0e2fbc/0f246/miniprogram.png 1118w"
+            sizes="(max-width: 960px) 100vw, 960px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/a4ead218edf1d0cf249a475daa0e2fbc/d9199/miniprogram.png"
+            alt="MiniProgram"
+            title="MiniProgram"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h1 id="development-view-of-wechat-mini-program" style="position:relative;"><a href="#development-view-of-wechat-mini-program" aria-label="development view of wechat mini program permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Development View of WeChat Mini-Program</h1>
+<p>This part is about the development view of the Mini-Program. It’s generally about the structure, project kernal and project structure.</p>
+<h2 id="wechat-mini-program-runtime" style="position:relative;"><a href="#wechat-mini-program-runtime" aria-label="wechat mini program runtime permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WeChat Mini-Program Runtime</h2>
+<ul>
+<li>Rendering Layer: WXML &#x26; WXSS (HTML &#x26; CSS)</li>
+<li>JavaScript is the Development Language</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cade2097b499616e169c2c1a566c24bb/4719e/runtime.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAACYklEQVQ4y22UzW7TUBCF/YzwDIgNr8AWHgDYs4IFm3aBKBUSCFGgokBVqWqTpkmb1nbjOGn+HN//D40TpyntSCeO5p577pm5Y0fWWowxN7CWEMB5j3EO61yVu8UxBtknseItOVG9KHDOoVXJ/v4f4vMOzCbo6yFWqxWn4nnH8HrIj92f9JIYNxlhVFkdfCNoDM5ZxoXhPB2S5lOuxwpVzKu1Wkz4eMDCbFQQVABtMVovHQrRe7z3TOaW3a7jexe+nwe+nXnGpcM7uypbxE4GR2w23/Kxs8FG8w2NwWGV10YT6fEI1Wlh4i4Hl5pPJ44vp5bPLctOxzGe25WgMqrq23Z7k8dbD3n69QmPPjzg/cm7Kq+0IjJFgb5KsXnGXtew3RRBx1bDcXi1uJC6XHFAgL/pLq9+P+f1wUte7D3jV7xT5XUlKOQQcCFwNXG0+oZWpmjnlkLdlGv/gzGa+bygLMtb/V1cynIUgrc4XWJUQXAGV5EWt+/qEXIe6wPGOkql0drcFRSyUookSbi8jInjZAXJtdvtCkmnTdJskDSOSJrHJCdNkosupVKEEG7PodaaPM/p9/t3kKZpJdzPevQvuuSnLfKzDv00rfbMioLZbFaZim4N7LI0GSE5UaI+WXoleQn5lZ5LC2R9dJVycXzEdJATSWId1fUrRZZl9Ho9BoPBSlDcZr0e4/FYTrrZs9wnz2hdqH6KE2mBQBzXUb2ayxeh5i+w/A9ENfk+pxLiMI5jjhsN+lkGxQw/neBnU8Ky5HVDUat9zmB4vXB2j6iUOp1OGY1GzOdzgrN4+SKtia0L/gPJ1X8Y3D4A9QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/cade2097b499616e169c2c1a566c24bb/8ac56/runtime.webp 240w,
+/static/cade2097b499616e169c2c1a566c24bb/d3be9/runtime.webp 480w,
+/static/cade2097b499616e169c2c1a566c24bb/e46b2/runtime.webp 960w,
+/static/cade2097b499616e169c2c1a566c24bb/f37ae/runtime.webp 1330w"
+              sizes="(max-width: 960px) 100vw, 960px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/cade2097b499616e169c2c1a566c24bb/8ff5a/runtime.png 240w,
+/static/cade2097b499616e169c2c1a566c24bb/e85cb/runtime.png 480w,
+/static/cade2097b499616e169c2c1a566c24bb/d9199/runtime.png 960w,
+/static/cade2097b499616e169c2c1a566c24bb/4719e/runtime.png 1330w"
+            sizes="(max-width: 960px) 100vw, 960px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/cade2097b499616e169c2c1a566c24bb/d9199/runtime.png"
+            alt="MiniProgram Runtime"
+            title="MiniProgram Runtime"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h2 id="wechat-mini-program-project-kernel" style="position:relative;"><a href="#wechat-mini-program-project-kernel" aria-label="wechat mini program project kernel permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WeChat Mini-Program Project Kernel</h2>
+<ul>
+<li>
+<p>iOS, iPad OS &#x26; Mac OS: JavaScriptCore &#x26; WKWeb View</p>
+</li>
+<li>
+<p>Android: V8 &#x26; XWeb</p>
+</li>
+<li>
+<p>Windows (Win WeChat): Chrome core</p>
+</li>
+<li>
+<p>IDE on Windows: NW.js &#x26; Chromium Webview</p>
+</li>
+</ul>
+<h3 id="sample-screenshot-of-ide" style="position:relative;"><a href="#sample-screenshot-of-ide" aria-label="sample screenshot of ide permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Screenshot of IDE</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/37aa3db0556fc48cc4d74ffe131e91b4/6fa81/ide.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.166666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAACL0lEQVQoz4WRy09TQRSH79/S9j5a770z9wkttKG3KI/WQoIJFFxgIAGlMfHFxpCwkMSFLvwb3MBCxAcSFSOJRo2SsFCXrly4UKMh0URcfKYjYliIiy9zzsw5vzm/GS3pPkx7tUIyXKen5wi9vb3UajX6+/s5WqsxUK9Tr9fp6+ujkiSUW5TL+0iShGq1qvq0RqPB+OQEUSHP5OQ0AwODlEpFisUihUKeQkee9kI7bfmYOA4JggDP8/B9fx9RFBHHMdr8/AKv3/xgY+MdT55tM3a8SRC6dFe6VaMQLr7v4rgOtuPg/APbthXa+MQsSyvfuf/oK4s3d6gPzuAIg7DQpgqlJ5GBp2LXdf+LdubsFCurX7i+9JG19R0aozO40qKjq6REhBR4oYfwxIGif860qZMz3H2wzeKNT9xa22Gk0UTIQxSLJVUghCAKJZ7cFTzAthJsnj7Bi1fvWb7zmXsPf9AYbRLFks7OohLzfY8g8tWUB9t1FNrCpUE2t96yfPsbj5/+ZGT0FELalEqtCQVSesRRQBiGSClVLoVUl0khcB0X23bx/IAgjNHOX5jj+eYHVte3eLm1zXDjHK5rkCQV9cuGaZEzDUXWMslallpNQ8fSdUxdJ5PR0XVd1WpDx8a4em2O2YvTLFy+Qld5iCAU6g1zuRyZTIZUKk0qnSaVSu2RTv/eS+8jhdbyn8taOHaWXNbEdW26usrk83k1oWVZGIaBaRqYxl+MXUzT3Itb/AJxxo4AklAWLAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/37aa3db0556fc48cc4d74ffe131e91b4/8ac56/ide.webp 240w,
+/static/37aa3db0556fc48cc4d74ffe131e91b4/d3be9/ide.webp 480w,
+/static/37aa3db0556fc48cc4d74ffe131e91b4/e46b2/ide.webp 960w,
+/static/37aa3db0556fc48cc4d74ffe131e91b4/f992d/ide.webp 1440w,
+/static/37aa3db0556fc48cc4d74ffe131e91b4/8641a/ide.webp 1856w"
+              sizes="(max-width: 960px) 100vw, 960px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/37aa3db0556fc48cc4d74ffe131e91b4/8ff5a/ide.png 240w,
+/static/37aa3db0556fc48cc4d74ffe131e91b4/e85cb/ide.png 480w,
+/static/37aa3db0556fc48cc4d74ffe131e91b4/d9199/ide.png 960w,
+/static/37aa3db0556fc48cc4d74ffe131e91b4/07a9c/ide.png 1440w,
+/static/37aa3db0556fc48cc4d74ffe131e91b4/6fa81/ide.png 1856w"
+            sizes="(max-width: 960px) 100vw, 960px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/37aa3db0556fc48cc4d74ffe131e91b4/d9199/ide.png"
+            alt="IDE"
+            title="IDE"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h2 id="wechat-mini-program-project-structure" style="position:relative;"><a href="#wechat-mini-program-project-structure" aria-label="wechat mini program project structure permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WeChat Mini-Program Project Structure</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/be3b2ed629f02fa6b4151353d36a0927/50e7d/project_structure.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37.916666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABC0lEQVQoz32R0ZJEMBRE/f8fqjVEQhIRMiIMXnrrxlDYqn3ouqhO35OW9H2Ptm3hXA9jzFdNnNMUEELANE1R4ziemucZn8/nnIeSsmRI0xRN06Cua7xeGaSUYKxAURTgvIQQAkop7Mv3pc/AYyYUxDmPJjqgG43WmBg6DMNO5j1CGLEsC7Ztw7quN6orZTKGAOccqkrsRIJDK4Us+0HJObTWqOsqUpKn6zp472PIoRvh4H0kod7omkRGhBROIURPkzEWv1VCoLMW1rbxDPV5C6TSrbVQSn5NJpro+kROooX0Tr5rANXxh5ACySxlhTzP0XU2dnUVGa/Pzz976/D9pu3u3HgY/tPTcyX8BaYtYJXt8vD8AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/be3b2ed629f02fa6b4151353d36a0927/8ac56/project_structure.webp 240w,
+/static/be3b2ed629f02fa6b4151353d36a0927/d3be9/project_structure.webp 480w,
+/static/be3b2ed629f02fa6b4151353d36a0927/e46b2/project_structure.webp 960w,
+/static/be3b2ed629f02fa6b4151353d36a0927/f992d/project_structure.webp 1440w,
+/static/be3b2ed629f02fa6b4151353d36a0927/d50a6/project_structure.webp 1738w"
+              sizes="(max-width: 960px) 100vw, 960px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/be3b2ed629f02fa6b4151353d36a0927/8ff5a/project_structure.png 240w,
+/static/be3b2ed629f02fa6b4151353d36a0927/e85cb/project_structure.png 480w,
+/static/be3b2ed629f02fa6b4151353d36a0927/d9199/project_structure.png 960w,
+/static/be3b2ed629f02fa6b4151353d36a0927/07a9c/project_structure.png 1440w,
+/static/be3b2ed629f02fa6b4151353d36a0927/50e7d/project_structure.png 1738w"
+            sizes="(max-width: 960px) 100vw, 960px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/be3b2ed629f02fa6b4151353d36a0927/d9199/project_structure.png"
+            alt="Project Structure"
+            title="Project Structure"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<ul>
+<li>
+<p>In App.js,  global data object will be stored here.</p>
+</li>
+<li>
+<p>In Pages, the first page will be indexed as the Main page.</p>
+</li>
+</ul>
+<h1 id="portfolio" style="position:relative;"><a href="#portfolio" aria-label="portfolio permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Portfolio</h1>
+<p>In 2021, I colloborated with <a href="https://www.instagram.com/inuhikru/" target="_blank" rel="nofollow noopener noreferrer">Hikaru</a> and we successfully launched two mini-programs. Thank you Hikaru, hope we can continue cooperating in the future!</p>
+<h2 id="matrix-scan" style="position:relative;"><a href="#matrix-scan" aria-label="matrix scan permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Matrix Scan</h2>
+<p>Matrix scan is a mini-program launched for a small exhibition. Participants can use this miniprogram to unlock different icons designed for the exhibition. (Designer: <a href="https://www.instagram.com/inuhikru/" target="_blank" rel="nofollow noopener noreferrer">Hikaru</a>)</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 830px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/1bc373183d2d1d7fb1313d4833b4e713/715a3/matrix_scan.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 81.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAAEPklEQVQ4yyXSa09TBwCA4f6VZUumMWa6ZEQ2JwqBKRehQAu0pdfTnp72tAMKlJZLLYUWCqUVKJdSoDIQlYtMBAVlU8AIuAqZMXPL9sE/sezbuzn/wPPlfRUGs4UrKoF8tZWLSj2lOg+VphAFqnZU1jBaoxOTYOZydTVVDRL6aCeC4EASzXxZaKRMK1KiC1GldSDaBBR6i5UcjYGvaiycKpYpMndT7x5HI8eQQ+uYJB86g8CpvDq0mSAdb1J819bMlXoLeaIZ/9QoPx39jkH0YjGbPoAS36jd5GkbMXkTXDVIrN1p5cdFHxeUPSi1bmx2J/HxFaTMEKp0F7H5uwyl5onPLTGxtMFh9oSOG2EMBgOKepNMTkUIvbObu7NxvO1RNh5+z/ZmM3q5lRqLE5e7ge2dF8QnVgkkFvAEMoT67zEzv0kgNEFqbpFgbwCjwYhCZ5L5VtlOW0sjyUQfrcFJlh54ePrYg80rorPb0OpEikwevONjRBILqOVBjJ44HYNJtOEABVYPFRoTos2KQmNwojQGWRjtIDjbg9rqIpzq4slKgGBPCxV1Ghyim+jyBMnsNNnsY6ZfzrH/6iGvjh4T203j7B+hQuXGLlpQ6AUZt2+AmckQzbdjdGbiSDfDLGb6iQe9lFdrsEoS0eFxdrc3ODnaYvXJMi9+3iT7aouN7RWGkre4XuP6COosTho6IqRTvfizSXy7Y/j2E6zNRUgOdlGlqccq2JFHwky+zPDrwSOG9mdYPlhifW+Znt1R1raWEBwNCIIFhUmU6YzGuJMO0/NulNb1IE3Ph+nqDBPp7aVUZUCSJFqTA6R35skebDP7YJ6V7SX297aYu7/OwvIKlRoZ0fY/6MQfTXCzL0zgeARpLkzL0TC56gi5lf0otS5Eu53WeIzZvdu8O37K4t4Mz47WeH+8zD+v7Wzen6Gstgm7zYxCcsk0R/vJLW/H9zqJZixGx8kwOeowp69GqapvwOGw051O0LuV4nBvk+FHKW5vLfH+aJq/d3O4fydBSW3zR1B0uqiUuvjimpeixkFyNREKXP2cvx7mfHkErcWFwWSm7UYff7x+ztvjHd78ssOb7FPeHj/jr99eMpW5R2GFhMMufBjbwZmr/Xx+JcpnX4c5W9zHqfw+zhRFKRG9mB1WaupE9L4Y0y/m+fPkGbcOfmD7cJXNwxVGjtNMZNIIkhPB8qGyQeaithPjoBNtj4NzpQGKG/xU+xspMbqxOOzU6ewU1PZQ6OpGaRqgpDmEWg5R2tiLOhmiUOfEYLVhFQQUao2d3Log+pse6vqaOFscokjuQun3cK4sQHV9I4JZoqzJzYXaRk7nh7imi/HppS4+udhJaX2csVvLBENBTEYTCn9nkLzyFi6V+rhU2kaBqo3LFW3kXfeRX+1HY3QgmEVMfjtK0UGLf4BUepJCVQvO5ghTs1PER8axSQ1Y//vwX5soEpqvzHY8AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/1bc373183d2d1d7fb1313d4833b4e713/8ac56/matrix_scan.webp 240w,
+/static/1bc373183d2d1d7fb1313d4833b4e713/d3be9/matrix_scan.webp 480w,
+/static/1bc373183d2d1d7fb1313d4833b4e713/b2a51/matrix_scan.webp 830w"
+              sizes="(max-width: 830px) 100vw, 830px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/1bc373183d2d1d7fb1313d4833b4e713/8ff5a/matrix_scan.png 240w,
+/static/1bc373183d2d1d7fb1313d4833b4e713/e85cb/matrix_scan.png 480w,
+/static/1bc373183d2d1d7fb1313d4833b4e713/715a3/matrix_scan.png 830w"
+            sizes="(max-width: 830px) 100vw, 830px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/1bc373183d2d1d7fb1313d4833b4e713/715a3/matrix_scan.png"
+            alt="matrix_scan"
+            title="matrix_scan"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 844px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/85ba05920f45b8a305e2f8f821232676/33e10/live_usage.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAAEG0lEQVQ4yx2RSVOTBwBAv7/Qqglr4AuQEAOOyqJUdBCkdanOKINbWjsldaBqsaDFuGBKkDURAhp2QhKWBBMIEJOQBQmLCCrqQXuxM7Yz9tyf8Drl8Obd3uUJZ8tPcPLkEY6UFFJ4IJ89e3eRmakgLU2OTCYjLi6e7dt3sGOHBIlEilQaR0JCAnJRjkqlQq1WbyGKIklJSQgWSycPHzZhMhpoaLjFtauX+LlSQ1XlRTQXTnHyRDGHDuZRUJBDdpYKUUwlJVVGSkoKScnJiKJ8K7bty20kJEgRAsEgs7NeQqEgkcUorW16jO33mXQ7GBg0Y2yvp6mpjt/117fc3FxH04Ob1NZoOXf2OLn5u1Eo04iLk6DMTEWYmfHinpwg4PextBJjdMyKzd5PKBogGJrjiWecYauF0Ylh/PMzLD+PsLa+wPJqCGObjrIzX1N4IJfsXQpy8lT/B6eJRMKsrC4TCgWwDvfg888QfTaPz+fB55/GMTrA4FA3oYUgG5vPeff+Fa/fbWDpaeF2nZbL2nKKinIoKd2H4HBYCc4/ZePlBoGgj97eDubDT5nzeRge6sbltDHldWGz9xGNRYiuPKO6pprbd24wPTeCzdHOjdofKC7J5auCLITzx4rwz02x+eY1Ho8Tq9VCbCnC4lIYl2sEp8vKE7edQHAWn99Dv0FHdrKUHLWSMUcXT7y9GE06jh47SElhDkLxbiUh7zivN18SW4gw4bRTdeUnnq/FWFtbZNRhYX1jkW5LF5e/L2NpvAtNSR7F+/Yy1tfMlK+fqcd3qSgt2Lou7N+zm8Z7Ot68fUUsPMu9Oi05h9MZMev5+OcHVlfDzE6PMtTdyqXjheQX7GNndhY71Vloz59ipM9Ij/5X7PoqrmnOICiUWYiigoWFeeYmB5h8PMQL9wozQxPEFgN8+usPpkY66W9ppPRwKYIgIFdkoFSr+e7iaVruXOd+7TWcbbUMtt5FkIsZaC6c48VqiL6H97CZx3j79DOjPU6CARef//lIZMZG8516WusMSKRSJInxKNVZGBrrcNrNXK66idfaSktjPYIsOY0bNdXEolNYuvUMmjqY6ZzAZDBgGzHx4f06L9cjTLsceO1uFMpMvpBsJ1GWyoMHt3hkNnD1ajWvwnb+/bSMkJwkp7bmFwJzdob6jbjNXfwdDfGorQOzxczbzUViMT/THgehoA8xIwMxI53klFR0uutUVFxEpVJyu0bL2GAbgiimUVlZQWR+kilnH5PtA2y6ApjqjTS0txLy23E5e3HYLPR0m5HGx5OeqSRdoeDHCg01tZWos9QUHcrn9LdFCImJSVyp0vIs7MbpeMxY8yP8HX0MN5vQ63WM2zpobbpFU8NvWLo6ycvNRZYiIzNTRWFhAZqyo5QfPcipI/spP/0N/wHtPNOH74jbSQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/85ba05920f45b8a305e2f8f821232676/8ac56/live_usage.webp 240w,
+/static/85ba05920f45b8a305e2f8f821232676/d3be9/live_usage.webp 480w,
+/static/85ba05920f45b8a305e2f8f821232676/20d15/live_usage.webp 844w"
+              sizes="(max-width: 844px) 100vw, 844px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/85ba05920f45b8a305e2f8f821232676/8ff5a/live_usage.png 240w,
+/static/85ba05920f45b8a305e2f8f821232676/e85cb/live_usage.png 480w,
+/static/85ba05920f45b8a305e2f8f821232676/33e10/live_usage.png 844w"
+            sizes="(max-width: 844px) 100vw, 844px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/85ba05920f45b8a305e2f8f821232676/33e10/live_usage.png"
+            alt="Live on Exhibition"
+            title="Live on Exhibition"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h2 id="pelletcat" style="position:relative;"><a href="#pelletcat" aria-label="pelletcat permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PelletCat</h2>
+<p>PelltCat is a miniprogram of a small game for identification testing. You can search “PelletCat” in WeChat and launch the app, play with it.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/5dae10c0f3aef58fc420e946dcfab212/1ac29/pellet_cat.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 63.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAADdElEQVQ4ywXB61eSBwDA4feva5cP+9JOZ2ezbW0KZtMJToRUQJkKinVSMxWUm8hFRV4wUcT2QmJEmCmk2DJ3mpU7iGJ53Zn+9jxCqVhkfX2b9LNt4okt8htb3OubQ6WSk4p8R3ZFye4/WnY+3GY3r8Vjr0NRIUNS/0L4axUOww28Rh1OnZmanw0IO+9hXjrmw+4l56cgRg7RtqVo0VeSlSopbbVy+a6Di0I7F7lOpobU6Oqus16vwSaz4Vs08jB9lxGvDWW1CUFa+g/b2B4bm6c8Shzg8n/kbu8LWtsq2PP2s62eYVUjkmuO8ne7BdGlpF4txxHtojHXj1x8wI/vJhhPTtJm/A3BOX7B9l8npJePsDgLOHyHGLuXaTXKKEldpJQBpoIZxO4o+cr7RFz1yMwN1BZG+UI3QOdnfr78cwHbahBztxJhJrZHZuUIX7BITCrRYynRaszQ1innINnGXJWDiF1kTudio7yfeaeKMpOan9w+BpVznBnDREYWmM+PYuqpQci+XMbuOcIT2MfiKjIdPaH3wQotHRUciH2kr44wVWUhds3HpsxO1K/g2rda/I4MO0/yZO1uitYlnr2x0zkiQ1jNriPOHGP3HtA3XECMHDPmXaNJW8Hl6n1OpSEKYTNvJ3s5fdpPYlzBlXvNXN9fIPYwx3YixvojN8mVLu44qxBGxg5JLH1CjJSwjRUYDx3h8qzxu+EmSaket+NX0kkdO3/YkOJOxDEln3dqsL58RW42TnZRQ0ksI+U0odEOImy+Enm8VCQ4c4gnUCSePMPjz2IyVuIdbaRWpmRoqJ1ZhY9gi5Upt5KvutQM5/M8mZggJSnIeG/iNz3nVnkAAQxMhnNMho9ILJVIZc4YsK7SYawiOllPi66WQWsH7sVeBqes+Mc0KDQKGpZ9VL2eRTWf4PvUNNWWLdQ/+BASS8tMhPYJz5aIxUtEFs4Z9azRaqhk742OlfEuNjcM5OP9rIYGCYRVGL+pI9A0zJXQa6rmCsj1aW7f+IRK5kOweS8ZdueQFkNs5F0kn2bp6F5D11IB52YIeeCiHebtIDmYX2igqayGmNpKl7FIzdBbGhvfc0cOt6pHEaTHM0zHLHiDdqJSD/HkBOaeDNpmOf+e6jk50nPyUc/xiRbQMxOpQ1FeiSgfIH71KYay59Q35qjuyNNinuB/maMKm6xPvgAAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/5dae10c0f3aef58fc420e946dcfab212/8ac56/pellet_cat.webp 240w,
+/static/5dae10c0f3aef58fc420e946dcfab212/d3be9/pellet_cat.webp 480w,
+/static/5dae10c0f3aef58fc420e946dcfab212/e46b2/pellet_cat.webp 960w,
+/static/5dae10c0f3aef58fc420e946dcfab212/6c19f/pellet_cat.webp 1022w"
+              sizes="(max-width: 960px) 100vw, 960px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/5dae10c0f3aef58fc420e946dcfab212/8ff5a/pellet_cat.png 240w,
+/static/5dae10c0f3aef58fc420e946dcfab212/e85cb/pellet_cat.png 480w,
+/static/5dae10c0f3aef58fc420e946dcfab212/d9199/pellet_cat.png 960w,
+/static/5dae10c0f3aef58fc420e946dcfab212/1ac29/pellet_cat.png 1022w"
+            sizes="(max-width: 960px) 100vw, 960px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/5dae10c0f3aef58fc420e946dcfab212/d9199/pellet_cat.png"
+            alt="PelletCat"
+            title="PelletCat"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h1 id="load-testing-on-wechat-mini-program" style="position:relative;"><a href="#load-testing-on-wechat-mini-program" aria-label="load testing on wechat mini program permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Load Testing on WeChat Mini-Program</h1>
+<ul>
+<li>
+<p>Using JMeter</p>
+</li>
+<li>
+<p>WeTest - An Official WeChat Testing Framework</p>
+</li>
+</ul>
+<h1 id="slides-link" style="position:relative;"><a href="#slides-link" aria-label="slides link permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Slides Link</h1>
+<p>Here is the slide version of this blog: <a href="https://prezi.com/view/AVc0ZGhMkUtyBuBelO7z/" target="_blank" rel="nofollow noopener noreferrer">Slides</a></p></div></div></div><div class="Post-module--footer--f8705"><div class="Meta-module--meta--dae0a"><p class="Meta-module--date--4d30d">Published<!-- --> <!-- -->Jan 15, 2022</p></div><div class="Tags-module--tags--18589"><ul class="Tags-module--list--82ae6"><li class="Tags-module--item--52015"><a class="Button-module--button--b1113" href="/tag/tech/">tech</a></li><li class="Tags-module--item--52015"><a class="Button-module--button--b1113" href="/tag/en/">EN</a></li></ul></div><div class="Author-module--author--1c58d"><p class="Author-module--bio--08950">Do not quench your inspiration and your imagination; do not become the slave of your model.<a class="Author-module--twitter--90647" href="https://www.twitter.com/jiaming_nie" rel="noopener noreferrer" target="_blank"><strong>Jiaming Nie</strong> on Twitter</a></p></div></div><div class="Post-module--comments--d3b99"></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/wechat_miniprogram";window.___webpackCompilationHash="5f78f69f5a7fe82b817d";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-1625592d723698f59598.js"],"app":["/app-25012ad150b24dc2f01e.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-0c915c7b1bdb5eac4fdf.js"],"component---src-templates-categories-template-categories-template-tsx":["/component---src-templates-categories-template-categories-template-tsx-f28cd8a5cfa7a7595442.js"],"component---src-templates-category-template-category-template-tsx":["/component---src-templates-category-template-category-template-tsx-bf6c29a4674ed5e29740.js"],"component---src-templates-index-template-index-template-tsx":["/component---src-templates-index-template-index-template-tsx-ada70b0a111e1a73b54a.js"],"component---src-templates-not-found-template-not-found-template-tsx":["/component---src-templates-not-found-template-not-found-template-tsx-9ed46185760e71442e04.js"],"component---src-templates-page-template-page-template-tsx":["/component---src-templates-page-template-page-template-tsx-2d27e23d81eada123f4e.js"],"component---src-templates-post-template-post-template-tsx":["/component---src-templates-post-template-post-template-tsx-e69fe88154be244f7385.js"],"component---src-templates-tag-template-tag-template-tsx":["/component---src-templates-tag-template-tag-template-tsx-a9dfb4ad354a077c3cf9.js"],"component---src-templates-tags-template-tags-template-tsx":["/component---src-templates-tags-template-tags-template-tsx-0fab40674b49067a0d8c.js"]};/*]]>*/</script><script src="/polyfill-1625592d723698f59598.js" nomodule=""></script><script src="/app-25012ad150b24dc2f01e.js" async=""></script><script src="/framework-745d5d28c0250a1a333b.js" async=""></script><script src="/webpack-runtime-8bd724b02551dd0e7a78.js" async=""></script></body></html>

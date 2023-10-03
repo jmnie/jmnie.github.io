@@ -1,0 +1,725 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.25.7"/><meta name="description" content="This webpage is the host page for the WPI CS 539 Group project 2018 Fall." data-gatsby-head="true"/><meta name="twitter:card" content="summary_large_image" data-gatsby-head="true"/><meta name="twitter:title" content="WPI CS 539 Project - Images Style Transfer Using CNN - Jiaming Nie&#x27;s Nutshell" data-gatsby-head="true"/><meta name="twitter:description" content="This webpage is the host page for the WPI CS 539 Group project 2018 Fall." data-gatsby-head="true"/><meta name="og:title" content="WPI CS 539 Project - Images Style Transfer Using CNN - Jiaming Nie&#x27;s Nutshell" data-gatsby-head="true"/><meta name="og:type" content="website" data-gatsby-head="true"/><meta name="og:description" content="This webpage is the host page for the WPI CS 539 Group project 2018 Fall." data-gatsby-head="true"/><meta name="image" content="https://jmnie.github.io//static/d068b09179d2fac329ed722c8820855c/uol_output.jpg" data-gatsby-head="true"/><meta name="og:image" content="https://jmnie.github.io//static/d068b09179d2fac329ed722c8820855c/uol_output.jpg" data-gatsby-head="true"/><meta name="twitter:image" content="https://jmnie.github.io//static/d068b09179d2fac329ed722c8820855c/uol_output.jpg" data-gatsby-head="true"/><meta name="theme-color" content="hsl(31, 92%, 62%)"/><style data-href="/styles.2ccffdad1682a3257a62.css" data-identity="gatsby-global-css">:after,:before,:root{--color-white:#fff;--color-primary:#5c92ff;--color-secondary:#f7a145;--color-prism-background:#eaeaeb;--color-typographic-base-font:#242933;--color-typographic-link-p-font:#5c92ff;--color-typographic-link-s-font:#f7a145;--color-page-border:#eaeaeb;--color-page-background:#fff;--color-sidebar-border:#eaeaeb;--color-sidebar-border-fade:#fff;--color-contacts-border:#eaeaeb;--color-button-border:#eaeaeb;--color-button-color:#242933;--color-theme-switcher:#3f485a;--color-theme-switcher-hover:#5c92ff}.dark :after,.dark :before,:root.dark{--color-white:#fff;--color-primary:#5c92ff;--color-secondary:#f7a145;--color-prism-background:#191d24;--color-typographic-base-font:#fff;--color-typographic-link-p-font:#5c92ff;--color-typographic-link-s-font:#f7a145;--color-page-border:#3f485a;--color-page-background:#242933;--color-sidebar-border:#3f485a;--color-sidebar-border-fade:#242933;--color-contacts-border:#3f485a;--color-button-border:#3f485a;--color-button-color:#fff;--color-theme-switcher:#eaeaeb;--color-theme-switcher-hover:#5c92ff}html{font-size:100}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;background:var(--color-page-background);color:var(--color-typographic-base-font);font-size:16px;line-height:1.625;margin:0 0 0 calc(100vw - 100%);text-rendering:optimizelegibility}body,h1,h2,h3,h4,h5,h6{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif}h1,h2,h3,h4,h5,h6{font-weight:600}h1{font-size:40px;line-height:52px;margin-bottom:26px;margin-top:104px}h2{font-size:27px;line-height:39px}h2,h3{margin-bottom:13px;margin-top:52px}h3{font-size:22px;line-height:26px}h4{font-size:19.2px;margin-top:39px}h4,h5{line-height:26px;margin-bottom:13px}h5,h6{font-size:16px;margin-top:65px}h6{line-height:26px;margin-bottom:13px}img{max-width:100%}hr,img{border:0;display:block}hr{background-image:linear-gradient(180deg,transparent 1px,transparent 11px,#242933 0,#242933 15px,transparent 0,transparent 26px);background-size:100% 26px;color:var(--color-typographic-base-font);height:26px;margin:52px auto;width:100px}a{color:var(--color-typographic-link-p-font);text-decoration:none}a:active,a:focus,a:hover{color:var(--color-typographic-link-s-font)}b,strong{font-weight:600}ul{list-style:square;margin-bottom:26px}ul li{margin-bottom:10px;padding:0 5px}p{line-height:26px;margin-bottom:26px}blockquote{font-style:italic;padding:0;text-align:center}figure{display:block;height:auto;width:100%}figcaption{color:var(--color-typographic-base-font);font-size:14px;font-style:italic;line-height:19.5px;margin-bottom:0;margin-top:6.5px;text-align:center}@media screen and (min-width:685px){figure.float-left,figure.float-right{max-width:310px;padding:0 26px}.float-right{float:right}.float-left{float:left}}code[class*=language-],pre[class*=language-]{word-wrap:normal;color:#657b83;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:var(--color-prism-background)}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#073642}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#93a1a1}.token.punctuation{color:#586e75}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#268bd2}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string,.token.url{color:#2aa198}.token.entity{background:#eee8d5;color:#657b83;cursor:help}.token.atrule,.token.attr-value,.token.keyword{color:#859900}.token.class-name,.token.function{color:#b58900}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.Feed-module--feed--a6204 .Feed-module--item--c7a63{margin-bottom:32.5px}.Feed-module--feed--a6204 .Feed-module--item--c7a63:last-child{margin-bottom:13px}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--title--f252f{font-size:27px;line-height:39px;margin-bottom:13px;margin-top:0}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--title--f252f .Feed-module--link--6123b{color:var(--color-typographic-base-font)}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--title--f252f .Feed-module--link--6123b:focus,.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--title--f252f .Feed-module--link--6123b:hover{border-bottom:1px solid #242933;color:var(--color-typographic-base-font)}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--description--57348{font-size:16px;line-height:26px;margin-bottom:19.5px}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--meta--250c2 .Feed-module--time--72864{color:var(--color-typographic-base-font);font-size:14px;font-weight:600;text-transform:uppercase}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--meta--250c2 .Feed-module--divider--81a18{margin:0 13px}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--meta--250c2 .Feed-module--category--59f58 .Feed-module--link--6123b{color:var(--color-secondary);font-size:14px;font-weight:600;text-transform:uppercase}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--meta--250c2 .Feed-module--category--59f58 .Feed-module--link--6123b:focus,.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--meta--250c2 .Feed-module--category--59f58 .Feed-module--link--6123b:hover{color:#5c92ff}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--more--51a4e{color:var(--color-primary);font-size:16px}.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--more--51a4e:focus,.Feed-module--feed--a6204 .Feed-module--item--c7a63 .Feed-module--more--51a4e:hover{border-bottom:1px solid #5c92ff;color:var(--color-primary)}.Layout-module--layout--2c933{margin-left:auto;margin-right:auto;max-width:1070px}.Layout-module--layout--2c933:before{content:"";display:table}.Layout-module--layout--2c933:after{clear:both;content:"";display:table}.Page-module--page--24e03{margin-bottom:52px}.Page-module--page--24e03 .Page-module--inner--4b31d{padding:26px 19.5px 0}.Page-module--page--24e03 .Page-module--title--90338{font-size:40px;font-weight:600;line-height:52px;margin-bottom:37.7px;margin-top:0}.Page-module--page--24e03 .Page-module--body--561c4{font-size:16px;line-height:26px;margin:0 0 26px}@media screen and (min-width:685px){.Page-module--page--24e03{width:calc(58.275% - 12.5px)}.Page-module--page--24e03:nth-child(1n){clear:none;float:left;margin-right:30px}.Page-module--page--24e03:last-child{margin-right:0}.Page-module--page--24e03:nth-child(12n){float:right;margin-right:0}.Page-module--page--24e03:nth-child(12n+1){clear:both}.Page-module--page--24e03 .Page-module--inner--4b31d{padding:32.5px 19.5px 0}}@media screen and (min-width:960px){.Page-module--page--24e03{width:calc(66.6% - 10px)}.Page-module--page--24e03:nth-child(1n){clear:none;float:left;margin-right:30px}.Page-module--page--24e03:last-child{margin-right:0}.Page-module--page--24e03:nth-child(3n){float:right;margin-right:0}.Page-module--page--24e03:nth-child(3n+1){clear:both}.Page-module--page--24e03 .Page-module--inner--4b31d{padding:39px 26px 0}}.Pagination-module--pagination--d61cb{display:flex;margin-top:52px}.Pagination-module--pagination--d61cb .Pagination-module--previous--4a76b{text-align:left;width:50%}.Pagination-module--pagination--d61cb .Pagination-module--previous--4a76b .Pagination-module--previousLink--5590d{color:var(--color-secondary);font-size:26px;font-weight:700}.Pagination-module--pagination--d61cb .Pagination-module--previous--4a76b .Pagination-module--previousLink--5590d:focus,.Pagination-module--pagination--d61cb .Pagination-module--previous--4a76b .Pagination-module--previousLink--5590d:hover{color:var(--color-primary)}.Pagination-module--pagination--d61cb .Pagination-module--previous--4a76b .Pagination-module--previousLink--5590d.Pagination-module--disable--7e105{color:#3f485a;pointer-events:none}.Pagination-module--pagination--d61cb .Pagination-module--next--1cab8{text-align:right;width:50%}.Pagination-module--pagination--d61cb .Pagination-module--next--1cab8 .Pagination-module--nextLink--532ff{color:var(--color-secondary);font-size:26px;font-weight:700}.Pagination-module--pagination--d61cb .Pagination-module--next--1cab8 .Pagination-module--nextLink--532ff:focus,.Pagination-module--pagination--d61cb .Pagination-module--next--1cab8 .Pagination-module--nextLink--532ff:hover{color:var(--color-primary)}.Pagination-module--pagination--d61cb .Pagination-module--next--1cab8 .Pagination-module--nextLink--532ff.Pagination-module--disable--7e105{color:#3f485a;pointer-events:none}.Button-module--button--b1113{border:1px solid var(--color-button-border);border-radius:20px;color:var(--color-button-color);display:inline-block;font-size:16px;font-weight:400;height:40px;line-height:40px;margin-left:auto;margin-right:auto;padding:0 26px;text-align:center;text-decoration:none}.Button-module--button--b1113:focus,.Button-module--button--b1113:hover{color:#5c92ff}.ThemeSwitcher-module--themeSwitcher--8a77f{--color:var(--color-theme-switcher)}.ThemeSwitcher-module--themeSwitcher--8a77f .ThemeSwitcher-module--button--7cb7b{align-items:center;background:transparent;border:0;cursor:pointer;display:flex;justify-content:center;outline:0}.ThemeSwitcher-module--themeSwitcher--8a77f .ThemeSwitcher-module--button--7cb7b svg{stroke:var(--color);pointer-events:none;transition:stroke .4s}.ThemeSwitcher-module--themeSwitcher--8a77f .ThemeSwitcher-module--button--7cb7b:hover{--color:var(--color-theme-switcher-hover)}.ThemeSwitcher-module--themeSwitcher--8a77f .ThemeSwitcher-module--moon--10537{stroke-dasharray:0 1px;opacity:0;transition:stroke-dasharray .2s ease-in,opacity .4s ease-in}.ThemeSwitcher-module--themeSwitcher--8a77f .ThemeSwitcher-module--sun--2163a{stroke-dasharray:1px 1px;opacity:1;transition:stroke-dasharray .2s ease-in,opacity .4s ease-in}.ThemeSwitcher-module--themeSwitcher--8a77f.ThemeSwitcher-module--dark--6db0c .ThemeSwitcher-module--moon--10537{stroke-dasharray:1px 1px;opacity:1}.ThemeSwitcher-module--themeSwitcher--8a77f.ThemeSwitcher-module--dark--6db0c .ThemeSwitcher-module--sun--2163a{stroke-dasharray:0 1px;opacity:0}.Author-module--author--cbd31 .Author-module--photo--9787b{background-clip:padding-box;border-radius:50%;display:inline-block;height:75px;margin-bottom:0;width:75px}.Author-module--author--cbd31 .Author-module--photo--9787b img{border-radius:50%}.Author-module--author--cbd31 .Author-module--title--cf7e5{font-size:18px;font-weight:600;line-height:29.25px;margin:0}.Author-module--author--cbd31 .Author-module--title--cf7e5 .Author-module--link--09c17,.Author-module--author--cbd31 .Author-module--title--cf7e5 .Author-module--link--09c17:focus,.Author-module--author--cbd31 .Author-module--title--cf7e5 .Author-module--link--09c17:hover{color:var(--color-typographic-base-font)}.Author-module--author--cbd31 .Author-module--subtitle--86ec5{color:#7f8ba4;line-height:26px;margin-bottom:26px}.Author-module--author--cbd31 .Author-module--titleContainer--4f576{align-items:center;display:flex;justify-content:space-between;margin:13px 0}.Icon-module--icon--1d7da{fill:currentcolor;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;speak:none;stroke:currentcolor;stroke-width:0;display:inline-block;font-style:normal;font-variant:normal;font-weight:400;height:1em;line-height:1em;text-align:center;text-transform:none;width:1em}.Contacts-module--contacts--09178{margin-bottom:26px}.Contacts-module--contacts--09178 .Contacts-module--list--9670b{display:flex;flex-flow:row wrap;flex-grow:0;flex-shrink:0;list-style:none;margin:13px 0;max-width:165px;padding:0}.Contacts-module--contacts--09178 .Contacts-module--list--9670b .Contacts-module--item--f9cb0{align-content:center;align-items:center;border:1px solid var(--color-contacts-border);border-radius:50%;display:flex;height:40px;justify-content:center;line-height:40px;margin:6.5px;padding:0;text-align:center;width:40px}.Contacts-module--contacts--09178 .Contacts-module--list--9670b .Contacts-module--item--f9cb0:nth-child(3n+1){margin-left:0}.Contacts-module--contacts--09178 .Contacts-module--list--9670b .Contacts-module--item--f9cb0 .Contacts-module--link--de1e0{border:0;color:var(--color-typographic-base-font);cursor:pointer;display:flex}.Contacts-module--contacts--09178 .Contacts-module--list--9670b .Contacts-module--item--f9cb0 .Contacts-module--link--de1e0:focus,.Contacts-module--contacts--09178 .Contacts-module--list--9670b .Contacts-module--item--f9cb0 .Contacts-module--link--de1e0:hover{color:var(--color-typographic-link-p-font)}.Copyright-module--copyright--2c602{color:#7f8ba4;font-size:14px}.Menu-module--menu--113a9{margin-bottom:26px}.Menu-module--menu--113a9 .Menu-module--list--e1ae3{list-style:none;margin:0;padding:0}.Menu-module--menu--113a9 .Menu-module--list--e1ae3 .Menu-module--item--8b679{margin:13px 0;padding:0}.Menu-module--menu--113a9 .Menu-module--list--e1ae3 .Menu-module--item--8b679 .Menu-module--link--a6f02{border:0;color:var(--color-typographic-base-font);font-size:16px;font-weight:400}.Menu-module--menu--113a9 .Menu-module--list--e1ae3 .Menu-module--item--8b679 .Menu-module--link--a6f02:focus,.Menu-module--menu--113a9 .Menu-module--list--e1ae3 .Menu-module--item--8b679 .Menu-module--link--a6f02:hover{border-bottom:1px solid #5c92ff;color:#5c92ff}.Menu-module--menu--113a9 .Menu-module--list--e1ae3 .Menu-module--item--8b679 .Menu-module--link--a6f02.Menu-module--active--6cb74{border-bottom:1px solid var(--color-typographic-base-font);color:var(--color-typographic-base-font)}.Sidebar-module--sidebar--1bfa1{width:100%}.Sidebar-module--sidebar--1bfa1 .Sidebar-module--inner--344d0{padding:26px 19.5px 0;position:relative}.Sidebar-module--sidebar--1bfa1 .Sidebar-module--inner--344d0:after{background:var(--color-sidebar-border);background:linear-gradient(to bottom,var(--color-sidebar-border) 0,var(--color-sidebar-border) 48%,var(--color-sidebar-border-fade) 100%)}@media screen and (min-width:685px){.Sidebar-module--sidebar--1bfa1{width:calc(41.625% - 17.5px)}.Sidebar-module--sidebar--1bfa1:nth-child(1n){clear:none;float:left;margin-right:30px}.Sidebar-module--sidebar--1bfa1:last-child{margin-right:0}.Sidebar-module--sidebar--1bfa1:nth-child(12n){float:right;margin-right:0}.Sidebar-module--sidebar--1bfa1:nth-child(12n+1){clear:both}.Sidebar-module--sidebar--1bfa1 .Sidebar-module--inner--344d0{padding:32.5px 19.5px 0}.Sidebar-module--sidebar--1bfa1 .Sidebar-module--inner--344d0:after{bottom:0;content:"";height:540px;position:absolute;right:-10px;top:30px;width:1px}}@media screen and (min-width:960px){.Sidebar-module--sidebar--1bfa1{width:calc(33.3% - 20px)}.Sidebar-module--sidebar--1bfa1:nth-child(1n){clear:none;float:left;margin-right:30px}.Sidebar-module--sidebar--1bfa1:last-child{margin-right:0}.Sidebar-module--sidebar--1bfa1:nth-child(3n){float:right;margin-right:0}.Sidebar-module--sidebar--1bfa1:nth-child(3n+1){clear:both}.Sidebar-module--sidebar--1bfa1 .Sidebar-module--inner--344d0{padding:39px}}.Author-module--author--1c58d{border-top:1px solid var(--color-page-border);line-height:26px;margin-bottom:52px;margin-top:26px;max-width:640px;padding-top:26px}.Author-module--author--1c58d .Author-module--bio--08950 .Author-module--twitter--90647{display:block;text-decoration:underline}.Author-module--author--1c58d .Author-module--bio--08950 .Author-module--twitter--90647:focus,.Author-module--author--1c58d .Author-module--bio--08950 .Author-module--twitter--90647:hover{color:var(--color-typographic-link-s-font)}@media screen and (min-width:685px){.Author-module--author--1c58d{margin-left:auto;margin-right:auto}}.Content-module--content--80d58{margin:0 auto;max-width:945px;padding:0 13px}.Content-module--content--80d58 .Content-module--title--09504{font-size:32px;font-weight:600;line-height:42.9px;margin:26px auto 0;max-width:640px;text-align:center}.Content-module--content--80d58 .Content-module--body--726c2 figure{margin-bottom:26px}.Content-module--content--80d58 .Content-module--body--726c2 figure blockquote{font-style:italic;margin-top:0;padding:26px 0;text-align:center}.Content-module--content--80d58 .Content-module--body--726c2 figure blockquote p{font-size:26.9072px;line-height:39px;margin-bottom:26px;margin-top:0;max-width:640px}.Content-module--content--80d58 .Content-module--body--726c2 a{text-decoration:underline}.Content-module--content--80d58 .Content-module--body--726c2 *{margin-left:auto;margin-right:auto;max-width:640px}.Content-module--content--80d58 .Content-module--body--726c2 h2>a{visibility:hidden}.Content-module--content--80d58 .Content-module--body--726c2 h2>a>svg{fill:var(--color-typographic-base-font)}.Content-module--content--80d58 .Content-module--body--726c2 img{max-width:100%}@media screen and (min-width:960px){.Content-module--content--80d58{padding:0}.Content-module--content--80d58 .Content-module--title--09504{font-size:48px;line-height:58.5px;margin-bottom:39px;margin-top:58.5px}.Content-module--content--80d58 .Content-module--body--726c2,.Content-module--content--80d58 .Content-module--body--726c2 p{font-size:18px;line-height:29.25px;margin-bottom:29.25px}.Content-module--content--80d58 .Content-module--body--726c2 h2>a{padding-right:13px;visibility:unset}}.Meta-module--meta--dae0a .Meta-module--date--4d30d{font-style:italic}.Tags-module--tags--18589{margin-bottom:13px}.Tags-module--tags--18589 .Tags-module--list--82ae6{list-style:none;padding:0}.Tags-module--tags--18589 .Tags-module--list--82ae6 .Tags-module--item--52015{display:inline-block;margin:6.5px 0}@media screen and (min-width:685px){.Tags-module--tags--18589 .Tags-module--list--82ae6 .Tags-module--item--52015:first-child{margin-left:0;padding-left:0}}.Post-module--post--3a994 .Post-module--content--3c6e5{margin:0 auto}.Post-module--post--3a994 .Post-module--comments--d3b99,.Post-module--post--3a994 .Post-module--footer--f8705{margin:0 auto;max-width:640px;padding:0 13px}.Post-module--post--3a994 .Post-module--buttons--2972d{align-items:center;display:flex;justify-content:center;margin:26px 0 0;text-align:center}.Post-module--post--3a994 .Post-module--buttons--2972d .Post-module--buttonArticles--d793a{margin:0 13px 0 0}@media screen and (min-width:960px){.Post-module--post--3a994 .Post-module--comments--d3b99,.Post-module--post--3a994 .Post-module--footer--f8705{padding:0}.Post-module--post--3a994 .Post-module--buttons--2972d{left:30px;margin:0 13px 0 0;max-width:none;position:fixed;top:30px}}</style><title data-gatsby-head="true">WPI CS 539 Project - Images Style Transfer Using CNN - Jiaming Nie&#x27;s Nutshell</title><link rel="alternate" type="application/rss+xml" title="Jiaming Nie&#x27;s Nutshell" href="/rss.xml"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-73379983-2"></script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer && window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-73379983-2', {"send_page_view":false});
+      }
+      </script><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><link rel="icon" href="/favicon-32x32.png?v=0af87c90e278e620bc4a8d90275de9b2" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=0af87c90e278e620bc4a8d90275de9b2"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=0af87c90e278e620bc4a8d90275de9b2"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script></head><body><script>
+          void function() {
+            var cachedMode;
+
+            try {
+              var preferredTheme = JSON.parse(localStorage.getItem('diesel:theme-atom'));
+
+              if (preferredTheme && preferredTheme.mode) {
+                cachedMode = preferredTheme.mode;
+              }
+            } catch (err) { }
+
+            function setTheme(newTheme) {
+              document.documentElement.className = newTheme;
+            }
+
+            var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+            setTheme(cachedMode || (darkQuery.matches ? 'dark' : 'light'));
+          }()
+        </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Layout-module--layout--2c933"><div class="Post-module--post--3a994"><div class="Post-module--buttons--2972d"><a class="Button-module--button--b1113 Post-module--buttonArticles--d793a" href="/">All Articles</a></div><div class="Post-module--content--3c6e5"><div class="Content-module--content--80d58"><h1 class="Content-module--title--09504">WPI CS 539 Project - Images Style Transfer Using CNN</h1><div class="Content-module--body--726c2"><p>This is the webpage of WPI CS 539 (Machine Learning) final project.</p>
+<p>Group Member:</p>
+<p>Jiaming Nie, Ruojun Li, Yu Li, Yang Tao, Guangda Li</p>
+<h1 id="introduction-to-style-transfer" style="position:relative;"><a href="#introduction-to-style-transfer" aria-label="introduction to style transfer permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction To Style Transfer</h1>
+<p>Style transfer is the technique of recomposing images in the style of other images. Three images will be taken, a content image, a style image and output image.</p>
+<p>Deep convolutional neural network is a powerful tool to extract the feature which represents the styles. The style could be the structure of one painting, the way artists draw their paintings and the colors that the artists use. Representation of content images can also be extracted using the deep convolutional neural network.</p>
+<p>A style transfer demo is illustrated on the following image:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d068b09179d2fac329ed722c8820855c/c58a3/uol_output.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62.083333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAQBAgP/xAAVAQEBAAAAAAAAAAAAAAAAAAABA//aAAwDAQACEAMQAAABWhwpKpiJ/8QAGhAAAwEAAwAAAAAAAAAAAAAAAAECEhETMf/aAAgBAQABBQLdcJDls6ZRkv3/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAXEQEAAwAAAAAAAAAAAAAAAAAAAREh/9oACAECAQE/AcVL/8QAGhAAAgIDAAAAAAAAAAAAAAAAAAEQMREhkf/aAAgBAQAGPwIxtlcRbi2f/8QAHBAAAgIDAQEAAAAAAAAAAAAAAAERITFRgWGR/9oACAEBAAE/IcBRw0HcH1UFMJqV+jScvZJV+x//2gAMAwEAAgADAAAAEHDf/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARYf/aAAgBAwEBPxDUh5f/xAAYEQACAwAAAAAAAAAAAAAAAAAAARExUf/aAAgBAgEBPxCWpGLP/8QAGxABAQADAQEBAAAAAAAAAAAAAREAIUExgfD/2gAIAQEAAT8QNGdooRBvMeQRofWCViAKJ9ncNcgv4YjkFBr2YWgScx//2Q=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/d068b09179d2fac329ed722c8820855c/8ac56/uol_output.webp 240w,
+/static/d068b09179d2fac329ed722c8820855c/d3be9/uol_output.webp 480w,
+/static/d068b09179d2fac329ed722c8820855c/e46b2/uol_output.webp 960w,
+/static/d068b09179d2fac329ed722c8820855c/f992d/uol_output.webp 1440w,
+/static/d068b09179d2fac329ed722c8820855c/293e0/uol_output.webp 1500w"
+              sizes="(max-width: 960px) 100vw, 960px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/d068b09179d2fac329ed722c8820855c/09b79/uol_output.jpg 240w,
+/static/d068b09179d2fac329ed722c8820855c/7cc5e/uol_output.jpg 480w,
+/static/d068b09179d2fac329ed722c8820855c/6a068/uol_output.jpg 960w,
+/static/d068b09179d2fac329ed722c8820855c/644c5/uol_output.jpg 1440w,
+/static/d068b09179d2fac329ed722c8820855c/c58a3/uol_output.jpg 1500w"
+            sizes="(max-width: 960px) 100vw, 960px"
+            type="image/jpeg"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/d068b09179d2fac329ed722c8820855c/6a068/uol_output.jpg"
+            alt="uol output"
+            title="uol output"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h1 id="images-representation" style="position:relative;"><a href="#images-representation" aria-label="images representation permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Images Representation</h1>
+<h2 id="use-pre-trained-cnn-to-generate-activation-maps" style="position:relative;"><a href="#use-pre-trained-cnn-to-generate-activation-maps" aria-label="use pre trained cnn to generate activation maps permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use Pre-trained CNN to generate activation maps</h2>
+<p>Deep convolutional neural network can output the activation map, which are features representing the content or style of an image. In this project, a ImageNet pretrained vgg16 network will be used to output the feature at different layers.</p>
+<p>VGG 16 is a deep CNN including 5 convolutional layers, 2 fully connetced layers and 1 softmax output layer. In this project, only the convolutional layers will be used as they will output the activation maps.</p>
+<p>The architecture of VGG16 is on the following:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/db1c097ad63b388bcd303d0a65fee384/5a190/vgg16.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 23.333333333333332%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA4klEQVQY003G226EIBAAUP//96xtom0WxV0Lg4Ay3BSYJu1Lz9Pp+r7nnJdaa/S4K2qUWwYPRCReLvjLGh98jrW4+66l5F+1ViLqvNiC0fm+KaeW0+V9bOm8D9Agn+fMVpB2YesR40trpVSMERFLKSGEzp0HSGmteS7z+NEvjG3b1g9voBQRlVIaUa11GkdjrJSCc76uqxCSsblDROec+BaL4NP2We5iDxyGrytn+sdaq7W2x/EXRPTed/u+G2Naa+482eMhAWKMw/AupTTGhBC01jElRDeOEwAopQAgpQSgfgBZ2RlQrLc4dAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/db1c097ad63b388bcd303d0a65fee384/8ac56/vgg16.webp 240w,
+/static/db1c097ad63b388bcd303d0a65fee384/d3be9/vgg16.webp 480w,
+/static/db1c097ad63b388bcd303d0a65fee384/d00b9/vgg16.webp 800w"
+              sizes="(max-width: 800px) 100vw, 800px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/db1c097ad63b388bcd303d0a65fee384/8ff5a/vgg16.png 240w,
+/static/db1c097ad63b388bcd303d0a65fee384/e85cb/vgg16.png 480w,
+/static/db1c097ad63b388bcd303d0a65fee384/5a190/vgg16.png 800w"
+            sizes="(max-width: 800px) 100vw, 800px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/db1c097ad63b388bcd303d0a65fee384/5a190/vgg16.png"
+            alt="vgg16"
+            title="vgg16"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>VGG16 takes 224 as the input size and all the convolutional layers are hidden layers.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 790px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/3d3d1764d8e9bbff8810f2631bc8ff58/2e237/layer2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 48.75000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAACTklEQVQozwXBzU/TUAAA8Eb9A4xnI2LUA4FoZH6gISpOBuyzbVz72r73+rW2761byxgtMNhgCIjA+BBRyAImBExIjAejN2OiiV68TIlXj/4FnvX3Y8ycIwBJwVg3c48EwbSsLAAQIULzlgp7urvjhrpYxV+P0Pakm4vetNCgS8QKlxw43874I4Gmmw6lRX8Ya1qpPKoZpkPoeDjGy+KtaOJSjKMw/iEf23w80mxUSyFFkbZVKt/t6mQQ1liOzwqCAlGa5bCmsTwviEA3TB0q7I2LD7lEJjXUAFk82FuxE4qa1vuiCxOF+IMI41kUibJqGLZDBCDZrishaOi6Qb2NUblltn/MR/28vrw4V/NLRMczgT1dDbbX5vr77jAFx0WirJumQ4ggScR1ZQgNw8iR4vqU9c3reqdfWaqPLFTK808XxsJwujY76QprE0rkai+DEWZZLisDBaNkOg0hzLCcKAIgyctLKzu7rzYOjm6XwzOXOyPRISUTywz0V3yjsVIGQGY8v6TqupWnvu9BhIqep2qaTfOU5l80m28+tb58/9U23zx1LdZz5fpA7B6fStan7GcbczMzdUYEUiKZEiQRYZhiMwhjjucFIGFVLQXjm89f7u7tcU8cjnaAobOaKFmWVnAhez9eKgdMtVZzCNEN1bJNAQCLUEmWsabZDhkNJ2SoIo183j/978+Jw52O9Ur49qBRUNX1SskxMNNq/fh5fByMlR2agxgV/GGEVcuyi54fBgHEkqDA94fn/v4++Xr1wv7W0lYdphKx5dkpYuD/XL3zSklcktYAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/3d3d1764d8e9bbff8810f2631bc8ff58/8ac56/layer2.webp 240w,
+/static/3d3d1764d8e9bbff8810f2631bc8ff58/d3be9/layer2.webp 480w,
+/static/3d3d1764d8e9bbff8810f2631bc8ff58/02aff/layer2.webp 790w"
+              sizes="(max-width: 790px) 100vw, 790px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/3d3d1764d8e9bbff8810f2631bc8ff58/8ff5a/layer2.png 240w,
+/static/3d3d1764d8e9bbff8810f2631bc8ff58/e85cb/layer2.png 480w,
+/static/3d3d1764d8e9bbff8810f2631bc8ff58/2e237/layer2.png 790w"
+            sizes="(max-width: 790px) 100vw, 790px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/3d3d1764d8e9bbff8810f2631bc8ff58/2e237/layer2.png"
+            alt="layer2"
+            title="layer2"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>Layer 2 of the CNN. The left image represents what the CNN has learned and the right image has parts of actual images.</p>
+<ul>
+<li>In layer 2 of the CNN the model is already picking up more interesting shapes than just diagonal lines. In the sixth square (counting horizontally) you can see that the model is picking up circular shapes. Also, the last square is looking at corners.</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f9dcb43e3297f438b3c71729c2a96d5a/5a190/layer3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37.083333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfklEQVQY0yXPz2oTURQG8HkeQXAh1IW4Ci4aahOodDqm06ZRpjV/Zub8uffc6WSa2Ka5GWk0pCZmIWQhgkhwpfgIPkbIk8hE+PGd3fdxHBajTUJKKa1ZFYeVRsUqMUm3G/ruQenBW/fl3z+/pxMLdDRML87DslwfRdmhE5MiVgAASDEgYCEGQFbGJPs7j1yv8i6xX+fLxceb5ptW3fNf7D11a8/tCBylRcTgtoKYt6mISIu5Si/Hx4/vMwVR+/Bgt3NaTU3c63LtNbpnyWr10xFttJgIEIkBmagAiCySiqx2HnbPG6XybsOr5+pkYifff6xaTWkHz34Nmk4YxVEMEAMhAxIWGACL5410qk9MO8gwMH7lNijb695inAXH+516aXkTOvP54tNsJiYhYNouIylA1mIkueyZMGf/vZx+vqh+069Gfb202YepDeqVu37L2Ww26/X6fjYb3A6tHf03HNo8z8d340FGJzVvwI22vze9UlnD+5JKvxeHHb8v0T9ZHsKA5kRENwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/f9dcb43e3297f438b3c71729c2a96d5a/8ac56/layer3.webp 240w,
+/static/f9dcb43e3297f438b3c71729c2a96d5a/d3be9/layer3.webp 480w,
+/static/f9dcb43e3297f438b3c71729c2a96d5a/d00b9/layer3.webp 800w"
+              sizes="(max-width: 800px) 100vw, 800px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/f9dcb43e3297f438b3c71729c2a96d5a/8ff5a/layer3.png 240w,
+/static/f9dcb43e3297f438b3c71729c2a96d5a/e85cb/layer3.png 480w,
+/static/f9dcb43e3297f438b3c71729c2a96d5a/5a190/layer3.png 800w"
+            sizes="(max-width: 800px) 100vw, 800px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/f9dcb43e3297f438b3c71729c2a96d5a/5a190/layer3.png"
+            alt="layer3"
+            title="layer3"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<ul>
+<li>In layer 3 we can see that the model is starting to learn more specific things. The first square shows that the model is now able to recognize geometrical patterns. The sixth square is recognizing car tires. And the eleventh square is recognizing people.</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/538599044d8f9033312285511b290641/00d43/layer5.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 24.166666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsTAAALEwEAmpwYAAABHUlEQVQY0xXMy07CQBQA0P6bC1dGTYgYJQVFYguMtLVApzP3ztB2Rq0VShoITUhkq7Al6sZX9L+M5wOOIaQEQAAhRzHnvtW+HPgudT3gLC9mQUAZg5BxHrJkUpDOycA6stqHpNt6Ws2NKFZSjuQoSpQe+AST1O3Ti5aptMxnJeMMhQD83/OJjmk98erXbq1e2U3TzEAhAZEDRrES/jmxTdR6ODzVcWOcxjRkjHPOIQhZOc6nkbZr+7Jfc5sH2/dXQyklhBAooyhR4FBSzTI2lkF2dZzfAkYJADLAkPF8OvW8TqOyR60qIebby7Px8fVZLkoppL65K1IV9M6k3Xz07Xve3a7X3z+/m80GUCCKYl46jueQ9gM3nd7OcrX8A4LmlAFmzd6tAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/538599044d8f9033312285511b290641/8ac56/layer5.webp 240w,
+/static/538599044d8f9033312285511b290641/d3be9/layer5.webp 480w,
+/static/538599044d8f9033312285511b290641/e46b2/layer5.webp 960w,
+/static/538599044d8f9033312285511b290641/a5d4d/layer5.webp 1000w"
+              sizes="(max-width: 960px) 100vw, 960px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/538599044d8f9033312285511b290641/8ff5a/layer5.png 240w,
+/static/538599044d8f9033312285511b290641/e85cb/layer5.png 480w,
+/static/538599044d8f9033312285511b290641/d9199/layer5.png 960w,
+/static/538599044d8f9033312285511b290641/00d43/layer5.png 1000w"
+            sizes="(max-width: 960px) 100vw, 960px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/538599044d8f9033312285511b290641/d9199/layer5.png"
+            alt="layer5"
+            title="layer5"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<ul>
+<li>Finally, layers 4 and 5 continue this trend. Layer 5 is picking up tings that are very useful for our dogs and cats problem. It is also recognizing unicycles and bird/reptile eyes. Be aware that these images only show a very small fraction of things learned by each layer.</li>
+</ul>
+<p>As the network went deeper, the features became more high-level and abstrated for human to recongnize. The pretrained vgg16 will be able to filter out the objects in one image.</p>
+<h2 id="representation-of-content" style="position:relative;"><a href="#representation-of-content" aria-label="representation of content permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Representation of Content</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 683px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d20eef1a53fd3fa204018097dd48d381/bca35/rep_content.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 78.75000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAACFElEQVQ4y3VUa5OjIBD0//+8+3DZut27xPKJiiAIKAh9BSYxj92hKB7ONE0PY4YfLISQRuccWtKiqioURQHG+f17bK+WPQY/jrH74CFmkcAueY6maWCUefJ5jcm+A7odHKzHmA/QRsMsBvM8w3Urgt3ZfUcke928zSWXEP0Ep9x183rOBgTl36TZiXzDkBCCf+cz1KxQ1XVidgQgMZvljLqukec5KKXX+HAwvAGOjCeHqFlMRtd3O8iDz7ZtKMoCv08f6fC+bwH4Q8MDHcjPJww9wSQE+r7H2P19y3z0a9sG569fIKQD7S7wdjqyfGgXYFUDhF2fZVnAaAMpJ0gp4Zx9QLZwy3hfCsHA2AjG2A7ofYBRHHZdkoMxGh3pMHGRMhufi3XuDrA5jRC2NI96cjbhkl9QliWy6Bi1GEcK0pEdUBu0tEE/EXA+wZgjMZxzDEMPzhm0MqBzj5oWkGKG0goZHWlKxDiO6Zo3M15Bb/JJwwhcViX6YQAdKIQUmBzFGo64TGuNxawY5QBh2XEt77Bs5gmwkQUaXmI1FlwwSDchXDWP471SbqbdDOctFrOATzwFRdZxvTgDs6nkt3oD4+efK+Wx3PSqkqbxUceEDMOAqq6grIT1K2YrdubhvVJie3rYwQcIIZNWEezP5ydOHx+QUsBjS0DHFd9r+e1v47YNQghEXWNvCQHj7F7Lr/X7Oo+A/wGxCOB4vsLpJwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/d20eef1a53fd3fa204018097dd48d381/8ac56/rep_content.webp 240w,
+/static/d20eef1a53fd3fa204018097dd48d381/d3be9/rep_content.webp 480w,
+/static/d20eef1a53fd3fa204018097dd48d381/e2d2f/rep_content.webp 683w"
+              sizes="(max-width: 683px) 100vw, 683px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/d20eef1a53fd3fa204018097dd48d381/8ff5a/rep_content.png 240w,
+/static/d20eef1a53fd3fa204018097dd48d381/e85cb/rep_content.png 480w,
+/static/d20eef1a53fd3fa204018097dd48d381/bca35/rep_content.png 683w"
+            sizes="(max-width: 683px) 100vw, 683px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/d20eef1a53fd3fa204018097dd48d381/bca35/rep_content.png"
+            alt="rep content"
+            title="rep content"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>The structure of the content image could be easily extracted using the output of the last convolutional layer of vgg16.</p>
+<h2 id="representation-of-style" style="position:relative;"><a href="#representation-of-style" aria-label="representation of style permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Representation of Style</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 746px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/986fc3f1ebbd6c5d5803aab6c1ab8807/62de4/rep_style.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 52.916666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNUlEQVQoz21Sga6EIAzz/7/TGL1TkIGoeNqXzuzi8yRZEFa6rrM6jgP3tW0bppiQ0wTnHPI86/0dy/O6rogxYooT6rpGxcTn89EEo5SCIAI3OOSUMY6j5o2gbOWLXZYFgxtOQkno+/4ktOQ8z/9I/egRQsC+719CYohlrOV8N4ZRg9jKWiSYO9WwUkoJKSe0Xav3RmgYBsler5eK8OLRNM1JyMQ0Tcg5w85slUEPr54RQyxJuCRGVTYMZ+sVQeYR96ch2R1b1zj2rw33VdmkqIrVeX6K6/DMayt2jcp8MW/s8ZXoSsiBEUuF97wq5HToA/vnt3l2B5uvxEkUxXFwP4TBBywyow89Gtfo//ekkKbTErbbtDW6d/tMKCKQIAgS0L07fXAnZKvee1VGhc47LVDK9kP4BxhlXQlsXBggAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/986fc3f1ebbd6c5d5803aab6c1ab8807/8ac56/rep_style.webp 240w,
+/static/986fc3f1ebbd6c5d5803aab6c1ab8807/d3be9/rep_style.webp 480w,
+/static/986fc3f1ebbd6c5d5803aab6c1ab8807/f7ebd/rep_style.webp 746w"
+              sizes="(max-width: 746px) 100vw, 746px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/986fc3f1ebbd6c5d5803aab6c1ab8807/8ff5a/rep_style.png 240w,
+/static/986fc3f1ebbd6c5d5803aab6c1ab8807/e85cb/rep_style.png 480w,
+/static/986fc3f1ebbd6c5d5803aab6c1ab8807/62de4/rep_style.png 746w"
+            sizes="(max-width: 746px) 100vw, 746px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/986fc3f1ebbd6c5d5803aab6c1ab8807/62de4/rep_style.png"
+            alt="rep style"
+            title="rep style"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>Similarly, the style of one image could also be extratced using the same method.</p>
+<h2 id="feature-and-gram-matrix" style="position:relative;"><a href="#feature-and-gram-matrix" aria-label="feature and gram matrix permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature and Gram Matrix</h2>
+<p>The activation map is a combined matrix which are high-level features human can easily recongnize.</p>
+<p>In style transfer, network need to convert them into another shape for the traning and testing procedure.</p>
+<ul>
+<li>First, convert the activation map into feature matirx.</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 475px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/3d1d42e258bf0bcd10b07e2b626101b9/466da/feature_matrix.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 55.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABsUlEQVQoz32Si46bMBBF8/9ft1VRok2lJCwhvLIUsPEDbJ/KRptupLQjWWMzD+7cO7sQAq9OtNvtRp7nFNeCw+HA5XLhu33lffe7/zWs65q2a6mbmo+iIP/IsdbivccYk/KWZXmq2fHCAuFx7+5d8rFR/H4+nwnBc/x1xDlHlmVPtbtxHIlnGEby/IOqqlmXNQW11rz9eEujF0VBVdfs93v6vudnlnGrbpRlSdu2dF3HrarYDcPAtSwTT6fiTPPZ0MseqSSn0wk5S4QQjGJinEYmORFrZjWn9zANCVDMWdf178jSSo7NkWP9TlZmlPeSoR9wOOxiMYtBG51iyij0olMDs9rkHyOHJ8bABx9JRCtN3TSJbCllEiGiMKthEgKlFdM0JVGElCilEs+7sAbcp8WPC66zuKvGlxbVCpquAb8JspoFbQy+suhB4VaH0ZrgQopHgTaEPuBnRzAer1y6YwJKKJp2axgRWmMRUrDcNeK3wOgNsdWWWc5JwIj25dokhY2maZqNXylTcvQOn4SKqOI78jfPW8Mkyr+WOibExY72tcTRP3YybKNGiz+Lyx5H/gMFQFQyzN5+2QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/3d1d42e258bf0bcd10b07e2b626101b9/8ac56/feature_matrix.webp 240w,
+/static/3d1d42e258bf0bcd10b07e2b626101b9/4287c/feature_matrix.webp 475w"
+              sizes="(max-width: 475px) 100vw, 475px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/3d1d42e258bf0bcd10b07e2b626101b9/8ff5a/feature_matrix.png 240w,
+/static/3d1d42e258bf0bcd10b07e2b626101b9/466da/feature_matrix.png 475w"
+            sizes="(max-width: 475px) 100vw, 475px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/3d1d42e258bf0bcd10b07e2b626101b9/466da/feature_matrix.png"
+            alt="feature matrix"
+            title="feature matrix"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>Each row of feature matrix represents different features, each column represent each pixel in activation map.</p>
+<p>The feature matrix contains all the inforamtion in style image.</p>
+<p>Another information needs to be known is the relationship between different features. The inner product of the feature matrix could describe the relationship in a clear manner. The new matrix is named as gram matrix.</p>
+<p>In python, the gram matrix could be easily calculated (F is feature matrix):</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">def Gram(F):
+    return np.dot(F.T, F) / F.size</code></pre></div>
+<ul>
+<li>The gram matrix is illustrated on the following. Each element in the gram matrix will represent 2 features on the row and column respectively.</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 424px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e6590ccc3dbb0c50055b3e011f261194/1cfa9/gram_matrix.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 99.58333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACoklEQVQ4y41UTW/TQBD1/0WCv4HgjOCIqHqDczlQlOZAS5ISu4ndtFGSpqUhSRt/xHZs73r90Iy7lpumiJFGXs9637x5M2sDNSuKgl2vt/e2bVfMwA7TH6pCQSnyvHyPJPJlBhVKFFI9IfEEsL55t75DZ9JBe9zCxeyCY2KZQC4SyFWKPBRQKKBynbR0o86oDrjJNrB/2zi0DzG9n5YZYwBrAAGAEDvNqANt0xdKIFc5ZC4RRhGur64xGAzg9B3YJz3Ylg3n3IFtl0/HcXZrSGY7NlqtFo6OjtBoNNBsNtHutGGaJqwzC1b/DL1+D71eD5ZlcZzcIEapSODFHpc282YMePD1AL7vM2MpJf7XmOFgNkBr1MKX9mdc3V/xhmmZ/Hz34T1ev33D6yzL8KvbRef0lN+DIMDKdeEHQTkFuilxGmOynMCcdjGcD3mTDsZxjFa7jeOfJxXgarXCcrnkw67rIk1Tjud5zpUY1byhnKssz/hJ2szn86oUz/cZKEkSTkTsbm9vEYYh1us1v5MbRdlmqEBCZTk7GXVsel2OixACm82GNdVGDAlo99gkOYQTQq0lxCLhjX6/zwzokHN+DvHQmL39fXzc+1Rp6D/4Iw2LVEF5AkWmkI0iUPU9u4+bmxtEcYzJZMI6EdMfx8f49v2wAqREFK8Ybl9wJfNKw/F4XMUJMHhgQkZakgTEivaSNOXYk5tCH5RjY1WAURTB9TxuEq1JBur27M+MwXSCzTag1oGs2+1iNBrxmkaDytJNoBGhGDVqvlig0Ww+//uqAxLDTAi4vs+AURSypjTMxIgH3ezixauXEFL8G5Du53A4fKShZqh18zyvYqwrfRbwcnjJt0UblejXmkK3gnTc/ikbz/2tSZ/6AWKhG6AT6wT1HvwFeJQApTUvNGsAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/e6590ccc3dbb0c50055b3e011f261194/8ac56/gram_matrix.webp 240w,
+/static/e6590ccc3dbb0c50055b3e011f261194/96b95/gram_matrix.webp 424w"
+              sizes="(max-width: 424px) 100vw, 424px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/e6590ccc3dbb0c50055b3e011f261194/8ff5a/gram_matrix.png 240w,
+/static/e6590ccc3dbb0c50055b3e011f261194/1cfa9/gram_matrix.png 424w"
+            sizes="(max-width: 424px) 100vw, 424px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/e6590ccc3dbb0c50055b3e011f261194/1cfa9/gram_matrix.png"
+            alt="gram matrix"
+            title="gram matrix"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>If one element on the gram matrix is large, the relation between these 2 features will be stronger. For example, in one cell, the row represent the tree, the column is flower, the value is larger means this artist prefers the combination of tree and flower.</p>
+<p>The size of gram matrix is only determined by the number of feature map. In style transfer, the input size is not strictly defined.</p>
+<h1 id="training-progress" style="position:relative;"><a href="#training-progress" aria-label="training progress permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Training Progress</h1>
+<p>The whole process is showed on the following.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/da2ff99480227e9353883c1846687931/e4611/style_transfer_sketch.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 127.08333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAIAAAC+dZmEAAAACXBIWXMAAC4jAAAuIwF4pT92AAADCElEQVQ4y4WUS4skRRDH+9P6ATyI30DxKnrwoBfRo0LLCrK7uiuM4F4EH7AOjDN2T1dV5/tdkZkRJVlV3Ts6Mxi3zIxfxT+iImIzPWJllEldRvFrNrcoHOk8ZZyI2hutPpvHYKwx+9sofscSp5EoFOSRhkg+n/mHYcKCJWJ2JUksATEQ1fmThMdIBhb+AZgqlMTLKFvMiQgz+A7cgSqsooZIGe9HbmrA30b5Rw491rFdlZTNFdhrwhUmn5Gnh2UT1RwPRHk51lqs6636KyRX6pLwLL7g5h5JCLl4hZAJm5AEoeO7QR6Y7nyyq5tIFPJ/YcwZOAcuspSYWxyu+5v+cs+uL3e/heRWGBB5uhe5FJAydV02hkqZpskGfVQHbnqmOsjj6leb8s1dwavVmo1ZzhNRgsjN0PG/ocz1Q1xhdoqccx5n8943KOcCEIQwwxCcddGYoCxn/sjs8YiE7YcvcK11gZVSMcaWeUpYiuZcHY/Oaqb7TuyMFqLrrRA00RvZiNhggOB9DIFKwZTKmCxjeui9M9oLaZiRzEkZtKZzzjFG51ytFVIyXef2+6x19b4C6P1e39x4I2/5TSd21gjL+WjtKecFtraUErT2SgUpEWAiAmudUl5KaRi3Qyd2gvVeqWjNKpvFTQgBxrFFBjDGJDg1cK2WC94djBU2qAhea66OwxvZLG5SSuMMl1p9CDnnc7c0Idpw1UvLBnUbnfVSprPsIa7VhtlSDOXUBjmGYLTl7DBcMd1JyxQfotFRq3l6Kon5V83tgEiTClWFUuc2aLK1s8ZaH8ccmwNkr22wjqaJ1EihbGjeLIT1o88+f/eDj7/+9inMs7r94ee33vvknQ8//eX1n4uWb55fvP3+l188uaCpkAKKJ9h7v91+9fLZlh2uF9enz188efHs+1evnAuLuh8vftp+9/L11b4VewiPzPN5xdk6ibpe0Z3JY2nZZJsTQHW2RciyrWrKpfNUcL2ZqBJWHkmkR3fYv6xim3vdytMWaB9Jw/nx/+BFx1hJQ1uaFe/u7X8AjG+jPBMdMHcAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/da2ff99480227e9353883c1846687931/8ac56/style_transfer_sketch.webp 240w,
+/static/da2ff99480227e9353883c1846687931/d3be9/style_transfer_sketch.webp 480w,
+/static/da2ff99480227e9353883c1846687931/e46b2/style_transfer_sketch.webp 960w,
+/static/da2ff99480227e9353883c1846687931/94575/style_transfer_sketch.webp 1298w"
+              sizes="(max-width: 960px) 100vw, 960px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/da2ff99480227e9353883c1846687931/8ff5a/style_transfer_sketch.png 240w,
+/static/da2ff99480227e9353883c1846687931/e85cb/style_transfer_sketch.png 480w,
+/static/da2ff99480227e9353883c1846687931/d9199/style_transfer_sketch.png 960w,
+/static/da2ff99480227e9353883c1846687931/e4611/style_transfer_sketch.png 1298w"
+            sizes="(max-width: 960px) 100vw, 960px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/da2ff99480227e9353883c1846687931/d9199/style_transfer_sketch.png"
+            alt="style transfer sketch"
+            title="style transfer sketch"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<ul>
+<li>
+<p>In the forward propagation, input the style image and content image into the network, extracted the feature.</p>
+</li>
+<li>
+<p>For each the content image, the content loss is determined as the the sum of all the training images.</p>
+</li>
+<li>
+<p>The cost function is the sum of the style loss and content loss.</p>
+</li>
+<li>
+<p>In the forward propagation, compute the gradient of total loss over the content image. Take the gradient descent until total loss converges.</p>
+</li>
+<li>
+<p>The content loss is a determined value defined by the training images.</p>
+</li>
+</ul>
+<h2 id="minimize-the-loss" style="position:relative;"><a href="#minimize-the-loss" aria-label="minimize the loss permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Minimize the loss</h2>
+<p>The calculation equation of the style loss and content loss is actually the equation of mean square function (MSE).</p>
+<h2 id="mse-equation" style="position:relative;"><a href="#mse-equation" aria-label="mse equation permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MSE Equation</h2>
+<p>In the training the loss will be the Mean Square Error (MSE) equation.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 959px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/5832a13becfbaed8bbd194efe7dc89f4/9100a/mse.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 40%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3oFB/8QAFxABAAMAAAAAAAAAAAAAAAAAAAEhMf/aAAgBAQABBQK2If/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAABD/2gAIAQEABj8Cf//EABsQAAIBBQAAAAAAAAAAAAAAAAARMQEhQYGh/9oACAEBAAE/IU08HWV9DZP/2gAMAwEAAgADAAAAEIPP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGBABAQEBAQAAAAAAAAAAAAAAAREAQTH/2gAIAQEAAT8QASlOHGVK4fJ4whXa05Df/9k='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/5832a13becfbaed8bbd194efe7dc89f4/8ac56/mse.webp 240w,
+/static/5832a13becfbaed8bbd194efe7dc89f4/d3be9/mse.webp 480w,
+/static/5832a13becfbaed8bbd194efe7dc89f4/1bae5/mse.webp 959w"
+              sizes="(max-width: 959px) 100vw, 959px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/5832a13becfbaed8bbd194efe7dc89f4/09b79/mse.jpg 240w,
+/static/5832a13becfbaed8bbd194efe7dc89f4/7cc5e/mse.jpg 480w,
+/static/5832a13becfbaed8bbd194efe7dc89f4/9100a/mse.jpg 959w"
+            sizes="(max-width: 959px) 100vw, 959px"
+            type="image/jpeg"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/5832a13becfbaed8bbd194efe7dc89f4/9100a/mse.jpg"
+            alt="mse"
+            title="mse"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h2 id="definition-of-total-loss" style="position:relative;"><a href="#definition-of-total-loss" aria-label="definition of total loss permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Definition of Total Loss</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 476px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cf32ed1f1c05cd420539d3c047fa6ba9/f2205/total.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 10.833333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAYklEQVQI1z2NNw5EMRBC//0v6cK2nHOQO1ZDsR0PEHwpJSilEGOEcw7Ce29yCAHGGFhr4b0n55wx5/z7WmvUWql77/juvSyutRi01vDeYyieHMjIGIOZ+Occ6lIKj4WlI/0fa8uWtZBcxo8AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/cf32ed1f1c05cd420539d3c047fa6ba9/8ac56/total.webp 240w,
+/static/cf32ed1f1c05cd420539d3c047fa6ba9/cf53a/total.webp 476w"
+              sizes="(max-width: 476px) 100vw, 476px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/cf32ed1f1c05cd420539d3c047fa6ba9/8ff5a/total.png 240w,
+/static/cf32ed1f1c05cd420539d3c047fa6ba9/f2205/total.png 476w"
+            sizes="(max-width: 476px) 100vw, 476px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/cf32ed1f1c05cd420539d3c047fa6ba9/f2205/total.png"
+            alt="total"
+            title="total"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h2 id="training-loss-plot" style="position:relative;"><a href="#training-loss-plot" aria-label="training loss plot permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Training Loss Plot</h2>
+<ul>
+<li>The loss plot in the training progress. It only takes 4 epoches, approximately 320000 iterations.</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 632px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6605827edb897b19e1c54c041bcc7e9b/084e2/loss_plot.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 85.83333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB7ElEQVQ4y52U7XOiMBCH/f//rPt2H853OwUBAVEERazIWwg8N0lPrq3aXm9ndpJMNs/+NoQdtG1L0zRkWcZHcxyHxWKB67p6HI/HDIdDoijikQ0UMN7vORwOVFWlvSxLPfq+r6FhGOJ5np7btsUuikmygpfsQp7nvSthA0VthND0ruve+SPLLhm277O0beazmU6mgErIoGtbdkmKbG8BHxOoWBVVZEeqcEjgLBhPppim2VeoFaZRgHyg8p5qfe9tRyMlQgjqutYwNR+okMQzaUXdAz+zR/sqiQJrhbFr0ojqS+B1755qKeUrsKxq9r5NU1f/pPBRkl7hZhviPM2Qb0r+DvNGoVpsXZvzJX9fDt3/KVQL17HZbHf9xndKv6vw8pLyZBg01y/2xdN59JQ0UB1WkyRwmBpLCtlec0PXfurdH1exPVBlyItSI86hx3Llk9ZQSo28cf6me2eq5P5PKfMjdbGjuQQEix/sIhcnsJjPf7I0RxjPI2xrhmlOMIwRljlhZc9YWVPM519EO1dDdXNQ5DgOqYozZZHRiozTYc0p9qiPa8RpQ3Fw2VoTyqNPlQaUxzXBcsQhMMj3K8rznmOakiQJA/XoZH9vr1YLieoV6TnH34QEYYy18thGe4JtRCkkQsLbU0LUutv8Bi3dKkuWadR6AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/6605827edb897b19e1c54c041bcc7e9b/8ac56/loss_plot.webp 240w,
+/static/6605827edb897b19e1c54c041bcc7e9b/d3be9/loss_plot.webp 480w,
+/static/6605827edb897b19e1c54c041bcc7e9b/59680/loss_plot.webp 632w"
+              sizes="(max-width: 632px) 100vw, 632px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/6605827edb897b19e1c54c041bcc7e9b/8ff5a/loss_plot.png 240w,
+/static/6605827edb897b19e1c54c041bcc7e9b/e85cb/loss_plot.png 480w,
+/static/6605827edb897b19e1c54c041bcc7e9b/084e2/loss_plot.png 632w"
+            sizes="(max-width: 632px) 100vw, 632px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/6605827edb897b19e1c54c041bcc7e9b/084e2/loss_plot.png"
+            alt="loss plot"
+            title="loss plot"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h1 id="conclusion" style="position:relative;"><a href="#conclusion" aria-label="conclusion permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusion</h1>
+<ul>
+<li>
+<p>VGG 16 was used to extract the feature and reconstruct images.</p>
+</li>
+<li>
+<p>Training the network takes very long time, a light CNN may be used for time reduction.</p>
+</li>
+<li>
+<p>The tune of parameter α and β to change the output.</p>
+</li>
+</ul>
+<h1 id="demo-video" style="position:relative;"><a href="#demo-video" aria-label="demo video permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Demo Video</h1>
+<p>The real-time demo video is here:</p>
+<p><a href="https://www.youtube.com/watch?v=5WqvDl81Cj0s" target="_blank" rel="nofollow noopener noreferrer">https://www.youtube.com/watch?v=5WqvDl81Cj0s</a></p>
+<p>Or referenced the gif:</p>
+<p><img src="/6517f354dface24f613f24431dc169f8/demo.gif" alt=""></p>
+<h1 id="training-dataset" style="position:relative;"><a href="#training-dataset" aria-label="training dataset permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Training Dataset</h1>
+<p>The training dataset uses the Microsoft COCO 2014 dataset.</p>
+<p>The size of the dataset is 14GB which has 80000 images in total.</p>
+<h1 id="github-page" style="position:relative;"><a href="#github-page" aria-label="github page permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GitHub Page</h1>
+<p><a href="https://github.com/jmnie/CS539-ML-18F-Project" target="_blank" rel="nofollow noopener noreferrer">https://github.com/jmnie/CS539-ML-18F-Project</a></p>
+<h1 id="presentation-slides" style="position:relative;"><a href="#presentation-slides" aria-label="presentation slides permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Presentation Slides</h1>
+<p><a href="https://prezi.com/kxdwilsggigw/" target="_blank" rel="nofollow noopener noreferrer">https://prezi.com/kxdwilsggigw/</a></p></div></div></div><div class="Post-module--footer--f8705"><div class="Meta-module--meta--dae0a"><p class="Meta-module--date--4d30d">Published<!-- --> <!-- -->Dec 9, 2018</p></div><div class="Tags-module--tags--18589"><ul class="Tags-module--list--82ae6"><li class="Tags-module--item--52015"><a class="Button-module--button--b1113" href="/tag/tech/">tech</a></li><li class="Tags-module--item--52015"><a class="Button-module--button--b1113" href="/tag/en/">EN</a></li></ul></div><div class="Author-module--author--1c58d"><p class="Author-module--bio--08950">Do not quench your inspiration and your imagination; do not become the slave of your model.<a class="Author-module--twitter--90647" href="https://www.twitter.com/jiaming_nie" rel="noopener noreferrer" target="_blank"><strong>Jiaming Nie</strong> on Twitter</a></p></div></div><div class="Post-module--comments--d3b99"></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/ml-project";window.___webpackCompilationHash="5f78f69f5a7fe82b817d";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-1625592d723698f59598.js"],"app":["/app-25012ad150b24dc2f01e.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-0c915c7b1bdb5eac4fdf.js"],"component---src-templates-categories-template-categories-template-tsx":["/component---src-templates-categories-template-categories-template-tsx-f28cd8a5cfa7a7595442.js"],"component---src-templates-category-template-category-template-tsx":["/component---src-templates-category-template-category-template-tsx-bf6c29a4674ed5e29740.js"],"component---src-templates-index-template-index-template-tsx":["/component---src-templates-index-template-index-template-tsx-ada70b0a111e1a73b54a.js"],"component---src-templates-not-found-template-not-found-template-tsx":["/component---src-templates-not-found-template-not-found-template-tsx-9ed46185760e71442e04.js"],"component---src-templates-page-template-page-template-tsx":["/component---src-templates-page-template-page-template-tsx-2d27e23d81eada123f4e.js"],"component---src-templates-post-template-post-template-tsx":["/component---src-templates-post-template-post-template-tsx-e69fe88154be244f7385.js"],"component---src-templates-tag-template-tag-template-tsx":["/component---src-templates-tag-template-tag-template-tsx-a9dfb4ad354a077c3cf9.js"],"component---src-templates-tags-template-tags-template-tsx":["/component---src-templates-tags-template-tags-template-tsx-0fab40674b49067a0d8c.js"]};/*]]>*/</script><script src="/polyfill-1625592d723698f59598.js" nomodule=""></script><script src="/app-25012ad150b24dc2f01e.js" async=""></script><script src="/framework-745d5d28c0250a1a333b.js" async=""></script><script src="/webpack-runtime-8bd724b02551dd0e7a78.js" async=""></script></body></html>
