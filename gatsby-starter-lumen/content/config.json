@@ -1,0 +1,47 @@
+{
+  "title": "Jiaming Nie's Nutshell",
+  "url": "https://jmnie.github.io/",
+  "subtitle": "Do not quench your inspiration and your imagination; do not become the slave of your model.",
+  "copyright": "© All rights reserved.",
+  "googleAnalyticsId": "UA-73379983-2",
+  "disqusShortname": "",
+  "postsLimit": 4,
+  "pathPrefix": "jmnie.github.io/",
+  "menu": [
+    {
+      "label": "Articles",
+      "path": "/"
+    },
+    {
+      "label": "About me",
+      "path": "/pages/about"
+    },
+    {
+      "label": "Contact me",
+      "path": "/pages/contacts"
+    }
+  ],
+  "author": {
+    "name": "Jiaming Nie",
+    "photo": "/stary_night.png",
+    "bio": "Do not quench your inspiration and your imagination; do not become the slave of your model.",
+    "contacts": {
+      "rss": "",
+      "email": "jiaming.nie13@gmail.com",
+      "github": "jmnie",
+      "facebook": "jiaming.nie",
+      "telegram": "",
+      "twitter": "jiaming_nie",
+      "linkedin": "jmnie",
+      "instagram": "mexdous",
+      "mastodon": "",
+      "line": "",
+      "weibo": "",
+      "gitlab": "",
+      "medium": "",
+      "youtube": "",
+      "codepen": "",
+      "soundcloud": ""
+    }
+  }
+}
