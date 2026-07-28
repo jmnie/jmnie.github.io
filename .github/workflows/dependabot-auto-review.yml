@@ -1,0 +1,98 @@
+name: Dependabot Auto Review
+
+on:
+  workflow_run:
+    workflows:
+      - Dependency PR CI
+    types:
+      - completed
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  approve:
+    name: Approve validated dependency PR
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.actor.login == 'dependabot[bot]' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Verify policy and approve
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+            if (run.pull_requests.length !== 1) {
+              core.setFailed(`Expected one pull request, found ${run.pull_requests.length}.`);
+              return;
+            }
+
+            const { owner, repo } = context.repo;
+            const pull_number = run.pull_requests[0].number;
+            const { data: pull } = await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number,
+            });
+
+            if (
+              pull.state !== "open" ||
+              pull.draft ||
+              pull.user.login !== "dependabot[bot]" ||
+              pull.base.ref !== "dev" ||
+              pull.head.repo.full_name !== `${owner}/${repo}` ||
+              pull.head.sha !== run.head_sha
+            ) {
+              core.setFailed("The pull request does not match the auto-review policy.");
+              return;
+            }
+
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner,
+              repo,
+              pull_number,
+              per_page: 100,
+            });
+            const allowedFiles = new Set([
+              "gatsby-starter-lumen/package.json",
+              "gatsby-starter-lumen/package-lock.json",
+            ]);
+            const unexpectedFiles = files
+              .map(({ filename }) => filename)
+              .filter((filename) => !allowedFiles.has(filename));
+
+            if (unexpectedFiles.length > 0) {
+              core.setFailed(`Unexpected files: ${unexpectedFiles.join(", ")}`);
+              return;
+            }
+
+            const { data: reviews } = await github.rest.pulls.listReviews({
+              owner,
+              repo,
+              pull_number,
+            });
+            const alreadyApproved = reviews.some(
+              (review) =>
+                review.user?.login === "github-actions[bot]" &&
+                review.state === "APPROVED" &&
+                review.commit_id === pull.head.sha,
+            );
+
+            if (alreadyApproved) {
+              core.info("This commit is already approved by github-actions[bot].");
+              return;
+            }
+
+            await github.rest.pulls.createReview({
+              owner,
+              repo,
+              pull_number,
+              event: "APPROVE",
+              body: "Automated approval: lint, tests, and the production build passed for this exact dependency commit.",
+            });

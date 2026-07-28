@@ -1,0 +1,51 @@
+name: Dependency PR CI
+
+on:
+  pull_request:
+    branches:
+      - dev
+    paths:
+      - "gatsby-starter-lumen/package.json"
+      - "gatsby-starter-lumen/package-lock.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dependency-pr-ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Sanity check and build
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: gatsby-starter-lumen
+
+    steps:
+      - name: Check out the tested merge commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22.23.1
+          cache: npm
+          cache-dependency-path: gatsby-starter-lumen/package-lock.json
+
+      - name: Install locked dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test -- --runInBand
+
+      - name: Build
+        run: npm run build
