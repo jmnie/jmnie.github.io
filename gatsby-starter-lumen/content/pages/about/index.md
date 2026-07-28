@@ -2,24 +2,35 @@
 layout: about
 title: Singular Point of Jiaming's Nutshell
 template: "page"
-description: "About Page"
+description: "About Jiaming Nie"
 socialImage: "./notebook.jpg"
 ---
 
-I'm Jiaming Nie. A developer. A creator. An unprofessional photograher. 
+I'm Jiaming Nie, a founding software engineer working at the intersection of
+applied AI and healthcare technology.
 
-Check out [LinkTree](https://linktr.ee/jmnie) for more details about me : )
+I build production AI systems: LLM fine-tuning and evaluation, multi-agent
+workflows, real-time streaming infrastructure, and the backend services that
+make those systems dependable. My recent work focuses on healthcare revenue
+cycle management, including medical billing code extraction, claim validation,
+denial analysis, and policy search.
 
-Some Qutoes: 
+Before that, I built RAG-powered assistants for a note-taking product, industrial
+IoT services, and web automation tooling.
 
-> "_Oh God, I could be bounded in a nutshell and count myself a king of infinite space,_"
-> "_were it not that I have bad dreams._"
-> "_Small? No, I could live in a walnut shell and feel like the king of the universe._"
+Read my [resume](/pages/resume), browse my work on
+[GitHub](https://github.com/jmnie), or find more links on
+[Linktree](https://linktr.ee/jmnie).
 
-    ------- Hamlet, Act 2 Sene 2, William Shakespeare
+Outside software, I enjoy running, photography, and collecting ideas that are
+too interesting to leave unexplored.
 
+> Oh God, I could be bounded in a nutshell and count myself a king of infinite
+> space, were it not that I have bad dreams.
 
-> "_Do not quench your inspiration and your imagination;_"
-> "_do not become the slave of your model._"
+— William Shakespeare, *Hamlet*
 
-    ------- Vincent Van Gogh
+> Do not quench your inspiration and your imagination; do not become the slave
+> of your model.
+
+— Vincent van Gogh
